@@ -4,11 +4,11 @@ date = "2023-04-08T17:27:53-07:00"
 author = "Abhay"
 authorTwitter = "" #do not include @
 cover = ""
-tags = ["", ""]
-keywords = ["", ""]
-description = ""
+tags = ["hello-world", ""]
+keywords = ["test", ""]
+description = "My first blog Post"
 showFullContent = false
-readingTime = false
+readingTime = True
 hideComments = false
 color = "" #color from the theme settings
 +++
