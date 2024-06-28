@@ -19,7 +19,7 @@ The project [uptime-kuma](github.com/louislam/uptime-kuma) is the first ever pie
 
 Through research, I found my answers
 1. Literally any piece of hardware that can connect to the interne and has a reasonable cpu/memory and storage for my needs. I don't plan on doing anything crazy, so small devices would work just fine (such as the old android phones lying around and unused).
-2. If I wanted to selfhost nextcloud, I would want to have a sufficient amount of storage space to do so. Hosting websites was stopped by problem number 3. However, when I made my website (https://abhay7.ml) using https://replit.com, which periodically switches off vm instances, I needed an http pinger to keep it up. As a result, I decided on uptime kuma, which was very simple to self host and served my purpose
+2. If I wanted to selfhost nextcloud, I would want to have a sufficient amount of storage space to do so. Hosting websites was stopped by problem number 3. However, when I made my website (https://abhay7.dev) using https://replit.com, which periodically switches off vm instances, I needed an http pinger to keep it up. As a result, I decided on uptime kuma, which was very simple to self host and served my purpose
 3. I moved my website over to cloudflare and their service of tunnels helped solved all my issues, as all I needed was to install `cloudflared`, login, configure, and I would have my server running on localhost exposed to the web with its own seperate IP address.
 
 ## The setup
@@ -60,4 +60,4 @@ Through research, I found my answers
 	We can add this to pm2 by running
 	`pm2 start "cloudflared tunnel run"`
 	
-The end result is uptime kuma running on our own device but available on the internet! Check out https://status.abhay7.ml for a working example :)
+The end result is uptime kuma running on our own device but available on the internet! Check out https://status.abhay7.dev for a working example :)

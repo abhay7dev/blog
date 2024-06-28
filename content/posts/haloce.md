@@ -28,8 +28,8 @@ I will not post CD Keys here, however, they are really easy to find. Just **sear
 
 For this step, you will need to download some executables and install the game.
 
-* [Halo Custom Edition Game [English]](http://hce.halomaps.org/index.cfm?fid=410)
-* [Halo Custom Edition Patch V1.0.10](http://hce.halomaps.org/index.cfm?fid=6798)
+* [Halo Custom Edition Game [English]](https://www.halomaps.org/hce/detail.cfm?fid=410)
+* [Halo Custom Edition Patch V1.0.10](https://www.halomaps.org/hce/detail.cfm?fid=6798)
 
 After download, simply unzip both these zip files.
 First, you should run the game installer. At this step, you will be prompted to enter the CD Key which you found in step 1. Eventually, you will reach a spot where it has 3 check marks with various install options. Importantly however, you **must uncheck "Install GameSpy Arcade"**. These are the old servers for combat evolved and are unusable.
@@ -92,16 +92,16 @@ As stated at the beginning, the original Halo PC Campain is not installed by def
 
 Links:
 * All files    - http://hce.halomaps.org/index.cfm?search=renamon
-	- Level 1  - [Pillar of Autumn](http://hce.halomaps.org/index.cfm?fid=1681) (a10)
-	- Level 2  - [Halo](http://hce.halomaps.org/index.cfm?fid=1678) (a30)
-	- Level 3  - [Truth and Reconciliation](http://hce.halomaps.org/index.cfm?fid=1682) (a50)
-	- Level 4  - [The Silent Cartographer](http://hce.halomaps.org/index.cfm?fid=1701) (b30)
-	- Level 5  - [Assault on the Control Room](http://hce.halomaps.org/index.cfm?fid=1702) (b40)
-	- Level 6  - [343 Guilty Spark](http://hce.halomaps.org/index.cfm?fid=1718) (c10)
-	- Level 7  - [The Library](http://hce.halomaps.org/index.cfm?fid=1719) (c20)
-	- Level 8  - [Two Betrayals](http://hce.halomaps.org/index.cfm?fid=1711) (c40)
-	- Level 9  - [Keyes](http://hce.halomaps.org/index.cfm?fid=1712) (d20)
-	- Level 10 - [The Maw](http://hce.halomaps.org/index.cfm?fid=1720) (d40)
+	- Level 1  - [Pillar of Autumn](https://www.halomaps.org/hce/detail.cfm?fid=1681) (a10)
+	- Level 2  - [Halo](https://www.halomaps.org/hce/detail.cfm?fid=1678) (a30)
+	- Level 3  - [Truth and Reconciliation](https://www.halomaps.org/hce/detail.cfm?fid=1682) (a50)
+	- Level 4  - [The Silent Cartographer](https://www.halomaps.org/hce/detail.cfm?fid=1701) (b30)
+	- Level 5  - [Assault on the Control Room](https://www.halomaps.org/hce/detail.cfm?fid=1702) (b40)
+	- Level 6  - [343 Guilty Spark](https://www.halomaps.org/hce/detail.cfm?fid=1718) (c10)
+	- Level 7  - [The Library](https://www.halomaps.org/hce/detail.cfm?fid=1719) (c20)
+	- Level 8  - [Two Betrayals](https://www.halomaps.org/hce/detail.cfm?fid=1711) (c40)
+	- Level 9  - [Keyes](https://www.halomaps.org/hce/detail.cfm?fid=1712) (d20)
+	- Level 10 - [The Maw](https://www.halomaps.org/hce/detail.cfm?fid=1720) (d40)
 
 ### Installing CEnshine
 In the PC Port of Halo: Combat Evolved frmo the xbox, the shaders and graphics were altered and a worsening way. Sledmine's CEnshine aims to replicate the Xbox's original textures as much as possible
@@ -119,11 +119,11 @@ The following is various projects and other Halo: Custom Edition related things 
 * Literally any of the ShadowMods' and Sledmine's other projects. Notable ones include
 	- [Coop Evolved](https://github.com/Sledmine/coop-evolved) - This project allows for the campaign to be played cooperatively
 	- [Insurrection](https://insurrectionce.com/) - A modern and complete overhaul of Halo: Custom Edition's User Interface while most notably, adding an easy way for friends to play multiplayer together easily and for Free
-* [Project Lumoria Campaign](http://hce.halomaps.org/index.cfm?pg=1&sid=41) - A complete custom campaign. Various new encounters and more. Maps have been made from the ground up. A very fun and new experience
-* [hce.halomaps.org](http://hce.halomaps.org/) - This site is what we have been using for a good part of this tutorial. It is the largest catalog of custom Halo maps on the internet and has been around for a very long time.
+* [Project Lumoria Campaign](https://www.halomaps.org/hce/detail.cfm?fid=6507) - A complete custom campaign. Various new encounters and more. Maps have been made from the ground up. A very fun and new experience
+* [www.halomaps.org](https://www.halomaps.org) - This site is what we have been using for a good part of this tutorial. It is the largest catalog of custom Halo maps on the internet and has been around for a very long time.
 * [CE3](https://haloce3.com) - CE3 is another catalog for various maps
 * [OpenSauce](https://www.nexusmods.com/halo/mods/7/) - OpenSauce allows for the usage of `.yelo` maps which are essentially `.map` files with greater functionality. This has been used by various custom maps.
-* [HAC2](http://devieth.halonet.net/) - Halo Anticheat 2 is an addon similar to OpenSauce and Chimera, adding various new features to the game.
+* [HAC2](http://devieth.halonet.net/) - Halo Anticheat 2 is an addon similar to OpenSauce and Chimera, adding various new features to the game. - Original Site is down, I am not sure if this works: http://hac2.halopc.com/index.html
 * [OpenCarnage](https://opencarnage.net/) - OpenCarnage is a forum for Halo CE.
 * [HaloSpawns](https://www.halospawns.com/) - HaloSpawns allows you to learn the spawns of each multiplayer map in Halo CE. This website includes a WebGL based map explorer letting you view each map in your web browser!
 

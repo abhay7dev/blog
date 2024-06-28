@@ -79,5 +79,5 @@ paginate = 5
         url = "https://replit.com/@EpicGamer007"
       [[languages.en.menu.main]]
         identifier = "main-site"
-        name = "abhay7.ml"
-        url = "https://abhay7.ml"
+        name = "abhay7.dev"
+        url = "https://abhay7.dev"
