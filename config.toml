@@ -72,11 +72,11 @@ paginate = 5
       [[languages.en.menu.main]]
         identifier = "github"
         name = "GitHub"
-        url = "https://github.com/EpicGamer007"
+        url = "https://github.com/abhay7dev"
       [[languages.en.menu.main]]
         identifier = "replit"
         name = "Replit"
-        url = "https://replit.com/@EpicGamer007"
+        url = "https://replit.com/@abhay7dev"
       [[languages.en.menu.main]]
         identifier = "main-site"
         name = "abhay7.dev"
