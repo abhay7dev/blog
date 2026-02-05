@@ -60,4 +60,5 @@ Through research, I found my answers
 	We can add this to pm2 by running
 	`pm2 start "cloudflared tunnel run"`
 	
-The end result is uptime kuma running on our own device but available on the internet! Check out https://status.abhay7.dev for a working example :)
+~~The end result is uptime kuma running on our own device but available on the internet! Check out https://status.abhay7.dev for a working example :)~~
+(2026 - This line has been outdated for 3ish years. My status page is currently ran through github upptime)
