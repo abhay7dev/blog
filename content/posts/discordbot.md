@@ -14,7 +14,6 @@ hideComments = false
 # How to Build and Run a Simple Discord Bot in Node.js [WIP]
 
 ## Introduction
-
 This blog post will describe, in proper detail, how to make a Discord Bot in 2026. 
 
 ### What is a Discord Bot?
@@ -34,7 +33,6 @@ Readers are expected to:
 This guide is targeted specifically towards those with MacOS, although links and/or commands will be provided for those on other operating systems (Windows, Linux).
 
 ## Instructions
-
 ### 1. Install Node.js and Visual Studio Code (VSCode)
 1. Navigate to https://nodejs.org/en/download in your Web Browser
 2. Follow the prompts and the instructions to install the latest LTS (Long-Term-Support) version of Node.js on your operating system(24.13.0 at the time of writing)
@@ -43,6 +41,42 @@ This guide is targeted specifically towards those with MacOS, although links and
 4. Click the button to install the latest stable version of VSCode based on your Operating System and preferences
     * MacOS users with homebrew installed: `brew install --cask visual-studio-code` installs VSCode
 
-### 2. Create a New Folder and open it in VSCode
+### 2. Create a New Folder and Open it in VSCode
 
-1. 
+Create a new folder in your operating system file explorer or command line utility.
+Click open in vscode
+
+### 3. Create a JavaScript file and Install Required Dependencies
+
+Now that you have gotten to this interface, right click the blank file explorer area and create a new file called index.js
+Press control and backtick in order to open up the terminal in vscode (or go to file -> term ... (todo)). 
+Run npm init -y to set up npm
+then run npm install discord.js, dotenv
+
+create a new file called .env
+
+### 4. Configure Discord Developer Settings and Retrieve your Discord Bot Token
+
+1. Navigate to https://discord.com/developers/applications in your Web Browser
+    * If prompted to sign in, do so.
+2. Click the "New Application" button, type in a name, accept Discord's policies, and then finally, click create.
+![New Application Modal](/discordbot/create_app.png)
+3. Grab the tokens and place it in the dot env
+
+### 5. Write Code and Run the Discord Bot
+
+Add the following code in index.js
+go back to the terminal and run node index.js
+
+### 6. Test the Discord Bot 
+
+invite the bot to a discord server, i have cereated a test server. given that i assumed you knew about discord beforehand, i assumed you can create a server on your own
+now navigate to a text channel, then do the /ping command.
+
+## Conclusion
+This blog post guided you readeres on how to make a very siimple discord bot. with further research, idea generation, and more, you can further expand utility and better suit bots for your needs, improving your QoL on the discord platform
+
+## References
+nodejs
+vscode
+discordjs
