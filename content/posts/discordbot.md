@@ -55,7 +55,8 @@ This guide is Operating System Agnostic, and all steps should work regardless of
 
 1. In the left `Explorer` menu of VSCode, right click and press `New file...`. Type in the file name `index.js`.
 2. Press control and backtick in order to open up the CLI in VSCode.
-    	* You could also navigate to Application Bar and navigate to `Terminal`, and then click `New Terminal`.
+    * You could also navigate to Application Bar and navigate to `Terminal`, and then click `New Terminal`.
+
 3. Run the command `npm install discord.js`.
 
 #### 4. Configure Discord Developer Settings and Retrieve your Discord Bot Token
