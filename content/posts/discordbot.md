@@ -1,5 +1,5 @@
 +++
-title = "How to Build a Discord Bot in Node.js [WIP]"
+title = "How to Build a Discord Bot in Node.js"
 date = "2026-02-05"
 author = "Abhay"
 cover = ""
@@ -11,9 +11,7 @@ readingTime = false
 hideComments = false
 +++
 
-# How to Build and Run a Simple Discord Bot in Node.js [WIP]
-
-## Introduction
+# Introduction
 This blog post will describe, in proper detail, how to make a Discord Bot. 
 
 #### What is a Discord Bot?
@@ -32,7 +30,7 @@ You are expected to:
 
 This guide is Operating System Agnostic, and all steps should work regardless of your platform. However, commands will be provided for those on MacOS with the homebrew package manager installed.
 
-## Instructions
+# Instructions
 #### 1. Install Node.js and Visual Studio Code (VSCode)
 1. Navigate to https://nodejs.org/en/download in your Web Browser.
 2. Follow the prompts and the instructions to install the latest LTS (Long-Term-Support) version of Node.js on your operating system(24.13.0 at the time of writing).
@@ -185,7 +183,7 @@ Ready! Logged in as Your App Name#1111
 ![Final Result](/discordbot/final_result.png)
 <br>
 
-## Conclusion
+# Conclusion
 This blog post guided you through creating a very simple Discord bot. With further research, idea generation, and more, you can further expand utility and write bots better suited for your needs, improving your quality of life on the Discord platform. There are countless ways this simple application can be improved upon, and with time and effort, you can take advantage of this platform to make your impact.
 
 ## References
