@@ -25,8 +25,8 @@ You are expected to:
 * Have a working computer with an Operating System (Windows, MacOS, or Linux) equipped with the necessary permissions to install software.
 * Have a Discord Account already made and logged into in their preferred Web Browser.
 * Have an beginner's understanding of various NodeJS, NPM, VSCode, and Discord terms.
-* Have a mind that is excited to learn :)
-    * Take advantage of the giscus comment section under this blog post to ask questions!
+* Have a mind that is excited to learn.
+    * Take advantage of the giscus comment section under this blog post to ask questions.
 
 This guide is Operating System Agnostic, and all steps should work regardless of your platform. However, commands will be provided for those on MacOS with the homebrew package manager installed.
 
@@ -103,7 +103,7 @@ This guide is Operating System Agnostic, and all steps should work regardless of
 #### 6. Write Code and Run the Discord Bot
 
 1. Navigate back to VSCode.
-2. In your `index.js` file, below the previously added lines regarding the bot token, client ID, and guild ID, add the following code.
+2. In your `index.js` file, below the previously added lines regarding the bot token, client ID, and guild ID, add the following code. This code adds all the functionality to the Discord Bot, while registering it with the Server you added the bot to.
 ```js
 const { REST, Routes, Client, Collection, Events, GatewayIntentBits, SlashCommandBuilder } = require('discord.js');
 
