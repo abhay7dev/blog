@@ -61,22 +61,22 @@ This guide is Operating System Agnostic, and all steps should work regardless of
 #### 4. Configure Discord Developer Settings and Retrieve your Discord Bot Token
 
 1. Navigate to https://discord.com/developers/applications in your Web Browser.
-    * If prompted to sign in, do so.
+    If prompted to sign in, do so.
 2. Click the `New Application` button, type in a name, accept Discord's policies, and then finally, click `Create`.
 ![New Application Modal](/discordbot/create_app.png)
 <br>
 
 3. On the left bar, click on `Bot`.
-    * You may configure various options for the Bot user, but they will be at your discretion.
+    You may configure various options for the Bot user, but they will be at your discretion.
 4. Click on `Reset Token`.
 5. After verifying your identity, press `Copy` in the resulting menu.
-    * This will copy your `TOKEN` string. A token is essentially a password which grants a bot access to its account.
-    * KEEP THIS TOKEN SAFE AND SECURE. Once copied, be sure to not share the token with unauthorized persons so as to prevent unauthorized usage of your specific bot
+    > This will copy your `TOKEN` string. A token is essentially a password which grants a bot access to its account.
+    KEEP THIS TOKEN SAFE AND SECURE. Once copied, be sure to not share the token with unauthorized persons so as to prevent unauthorized usage of your specific bot
 6. Navigate back to the recently created `index.js` file. Copy the following code into the top of the file:
     ```js
     const TOKEN = `<Insert Your Copied Token Here>`;
     ```
-    * **WARNING**: This is an extremely bad security practice. For the purposes of this tutorial, having your token in plain text in the `index.js` file is alright. For future reference, consider researching `.env` files.
+    > **WARNING**: This is an extremely bad security practice. For the purposes of this tutorial, having your token in plain text in the `index.js` file is alright. For future reference, consider researching `.env` files.
 7. Navigate back to the Discord Developer Portal, and click on `General Information` and copy the Application ID. Add the following code to the index.js file.
     ```js
     const CLIENT_ID = `<Insert Your Copied Application ID Here>`;
@@ -88,7 +88,7 @@ This guide is Operating System Agnostic, and all steps should work regardless of
 2. Scroll down to the `Scopes` subsection under `OAuth2 URL Generator`, and select the `applications.commands` as well as the `bot` options.
 3. Scroll down to Generated URL and click on the copy button on the far right of the generated URL.
 4. Navigate to that URL, and follow Discord's modals to add your Bot to a Server of your choosing.
-    * As specified in the modals, You are required to have special permissions in order to add Bots to Servers. If you don't have the proper permissions, follow Discord's guide on how to create a Server, and use this "Dummy" Server in order to add and test your Discord Bot.
+    > As specified in the modals, You are required to have special permissions in order to add Bots to Servers. If you don't have the proper permissions, follow Discord's guide on how to create a Server, and use this "Dummy" Server in order to add and test your Discord Bot.
 ![Modal shown after bot joins a server](/discordbot/join_bot_to_server.png)
 <br>
 
