@@ -55,7 +55,7 @@ This guide is Operating System Agnostic, and all steps should work regardless of
 
 1. In the left `Explorer` menu of VSCode, right click and press `New file...`. Type in the file name `index.js`.
 2. Press control and backtick in order to open up the CLI in VSCode.
-    * You could also navigate to Application Bar and navigate to `Terminal`, and then click `New Terminal`.
+    	* You could also navigate to Application Bar and navigate to `Terminal`, and then click `New Terminal`.
 3. Run the command `npm install discord.js`.
 
 #### 4. Configure Discord Developer Settings and Retrieve your Discord Bot Token
@@ -76,7 +76,7 @@ This guide is Operating System Agnostic, and all steps should work regardless of
     ```js
     const TOKEN = `<Insert Your Copied Token Here>`;
     ```
-    * <span style="color: red">WARNING</span>: This is an extremely bad security practice. For the purposes of this tutorial, having your token in plain text in the `index.js` file is alright. For future reference, consider researching `.env` files.
+    * **WARNING**: This is an extremely bad security practice. For the purposes of this tutorial, having your token in plain text in the `index.js` file is alright. For future reference, consider researching `.env` files.
 7. Navigate back to the Discord Developer Portal, and click on `General Information` and copy the Application ID. Add the following code to the index.js file.
     ```js
     const CLIENT_ID = `<Insert Your Copied Application ID Here>`;
