@@ -80,6 +80,9 @@ Diffie-Hellman key exchange has revolutionizd the way we secure communication in
 
 # Works Cited
 Computerphile. (2017, December 15). Secret key exchange (Diffie-Hellman) – Computerphile [Video]. YouTube. https://www.youtube.com/watch?v=NmM9HA2MQGI
+
 Diffie, W., & Hellman, M. E. (1976). New directions in cryptography. IEEE Transactions on Information Theory, 22(6), 644–654. https://doi.org/10.1109/TIT.1976.1055638
+
 TutorialsPoint. (2024). Cryptography – Diffie-Hellman algorithm. https://www.tutorialspoint.com/cryptography/cryptography_diffie_hellman_algorithm.htm
+
 Wikipedia contributors. (2019, December 10). Diffie–Hellman key exchange. Wikipedia. https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange
