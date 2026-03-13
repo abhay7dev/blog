@@ -28,6 +28,7 @@ To give a high level overview of the protocol, imagine this: Two friends, Alice 
 5. When Alice receives `b*` and Bob receives `a*`, they both perform one further mathematical operation on these keys, to finally calculate the final, shared key `K`.
 (TutorialsPoint, 2024)
 > Modular Exponentiation is a mathematical operation involving exponents and the remainders in division, also called the modulo.
+
 ![Wikipedia Image showing the algorithm in action with mock numbers](/diffiehellman/wikipic.png)
 > (Wikipedia, 2019)
 
