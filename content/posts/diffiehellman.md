@@ -20,29 +20,61 @@ A solution did appear however, thanks to the work of Whitfield Diffie and Martin
 Their solution and cryptography has allowed the internet to become what is is today. It laid the conceptual foundation for modern protocols such as HTTPS and SSH, and is the single most important baseline algorithm in allowing for E2EE in messaging. While we once needed in person meetups, we can now handle communication elegantly with computers and mathematics.
 
 # How does this algorithm work?
-To give a high level overview of the protocol, imagine this: Two friends, Alice and Bob, want to communicate with each other secretly.
-1. Alice and Bob publicly agree on a large number (a prime number `p`) and base number `g`.
-2. Alice and Bob both choose a secret, private number they never share beyond their computer. Alice's is `a` and Bob's is `b`
-3. Through modular exponentiation, Alice and Bob combined their private values with the public ones in order to generate new numbers. Lets name Alice's `a*` and Bob's `b*`
-4. Both `a*` and `b*` are exchanged over the public network. Eavesdroppers can see these numbers, but it is almost mathematically impossible to decompose this value into its original secret, which is what makes the algorithm so secure. 
-5. When Alice receives `b*` and Bob receives `a*`, they both perform one further mathematical operation on these keys, to finally calculate the final, shared key `K`.
-(TutorialsPoint, 2024)
-> Modular Exponentiation is a mathematical operation involving exponents and the remainders in division, also called the modulo.
-
 ![Wikipedia Image showing the algorithm in action with mock numbers](/diffiehellman/wikipic.png)
 > (Wikipedia, 2019)
 
-# Mathematical Explanation
-The mathematical explanation of the Diffie-Hellman Key Exchange is as follows:
+To understand the Diffie-Hellman Key exchange protocol, let's begin by imagining two friends, named Alice and Bob. They want to communicate in private but there is only a public channel where they can exchange messages. Diffie-Hellman allows them to arrivate at a shared secret, symmetric key that can be used to send messages across the network.
+> Symmetric Encryption - Encryption where the same key is used to encrypt and decrypt data. In modern computing, it is fast and secure when both the encrypting and decrypting party know the secret key used, but it does not tell us how that secret key should be exchanged in the first place. Diffie-Hellman helps solve this problem.
 
-| Alice | Public Middleman / Server | Bob |
+Let's walk through the protocol step by step:
+
+#### Step 1: Agree on the Public Numbers
+Alice and Bob publicly agree on two numbers:
+- A **large prime number** `p`
+- A **base (generator)** `g`
+These public numbers are used for the overall key exchange process, and they are shared in open to the public.
+For this example, we will use
+- `p = 23` (a prime number)
+- `g = 5` (a base number)
+
+#### Step 2: Choose Private Numbers
+Next, both Alice and Bob choose their own private numbers, which they will never share.
+- Alice chooses a Prime number `a = 4`
+- Bob chooses a Prime number `b = 3`
+These numbers must remain secret and not leave their computers.
+
+#### Step 3: Create Public Values
+Using **modular exponentiation**, Alice and Bob combine their private values with public values to create new numbers to exchange.
+- Alice calculates `A = g^a mod p`
+    - `A = 5^4 mod 23`
+    - `A = 4`
+- Bob calculates `B = g^a mod p`
+    - `B = 5^3 mod 23`
+    - `A = 10`
+Alice sends `A` to Bob, while Bob sends `B` to Alice. These calculated values are public and are visible to anyone peering into the public network.
+
+> Modular Exponentiation is a mathematical operation involving exponents and the remainders in division, also called the modulo. Imagine a clock with 12 hours. If you add 3 hours to 11 o'clock, you get 2 o'clock. This is because 11 + 3 = 14, which when divided by 12 gives a remainder of 2. Even if you added 15 hours to 11 o'clock, you would still get 2 o'clock because 11 + 15 = 25, which divided by 12 still gives a remainder of 2. In the context of Diffie-Hellman, modular exponentiation helps create values that are really easy to compute in one direction, (going from 11 to 2 o'clock), but super difficult to go backwards (just because you have 2 o'clock, you can't easily figure out if it came from 11 o'clock + 3 hours, or 11 o'clock + 15 hours, or any other similar combination). This helps keep the algorithm secure, because it is super difficult to take the public values and figure out the prive numbers used to make them.
+
+#### Step 4: Compute the Shared Secret Key
+Here is where the encryption and mathematical magic happens. Each person receives the other person's public value, and then combines it with their own private number to compute the shared secret key `K`.
+- Alice calculates `K = B^a mod p`
+    - `K = 10^4 mod 23`
+    - `K = 18`
+- Bob calculates `K = A^b mod p`
+    - `K = 4^3 mod 23`
+    - `K = 18`
+Even though Alice and Bob use separate calculations to arrive at K, they still arrive at the same K value (TutorialsPoint, 2024). This number `K` can now be used as a symmetric encryption key to securely communicate, and the middle server never learned what `K`, the secret key, ever was!
+
+Here is a visual table representing the steps for this key exchange.
+
+| Alice | Public Middleman / Network | Bob |
 |------|-----------------------------|-----|
-| **Private number:** `a` | **Public parameters:** Prime number `p` and base `g` | **Private number:** `b` |
-| **Calculated value:** `A = g^a mod p` | **Transmitted values:** `A` and `B` are visible to anyone observing the network | **Calculated value:** `B = g^b mod p` |
-| Alice sends `A` to Bob | The server or network simply forwards the numbers | Bob sends `B` to Alice |
-| **Final shared key:** `K = B^a mod p` | The middleman cannot compute `K` because the private numbers `a` and `b` are never transmitted | **Final shared key:** `K = A^b mod p` |
+| Private number `a = 4` | Public parameters `p = 23`, `g = 5` | Private number `b = 33` |
+| Computes `A = 5^4 mod 23 = 4` | Values `A` and `B` are transmitted across the network | Computes `B = 5^33 mod 23 = 20` |
+| Sends `A = 4` | Anyone can see these numbers | Sends `B = 20` |
+| Computes `K = 20^4 mod 23 = 6` | The middleman cannot compute `K` because `a` and `b` remain secret | Computes `K = 4^33 mod 23 = 6` |
 
-### Explanation of the Numbers
+#### Further Explanation of the Numbers
 
 **Prime number (`p`)**  
 A large prime number is chosen publicly by both parties. Prime numbers are useful in cryptography because modular arithmetic over primes has strong mathematical properties that make reversing exponentiation extremely difficult. 
@@ -60,17 +92,16 @@ These values are calculated using modular exponentiation (`g^a mod p` and `g^b m
 **Final shared key (`K`)**  
 After receiving the other party’s public value, each participant performs another exponentiation step. Due to the mathematical properties of modular exponentiation: `(B^a mod p) = (A^b mod p)`. Both of these calculations arrive at the same value: `(g^ab mod p)`. This means both parties independently arrive at the same secret value `K`, which can then be used as the symmetric encryption key for secure communication.
 
-> Symmetric Encryption - Encryption where the same key is used to encrypt and decrypt data. In modern computing, it is fast and secure when both the encrypting and decrypting party know the secret key used, but it does not tell us how that secret key should be exchanged in the first place. Diffie-Hellman helps solve this problem.
 
-# Limitations and Vulnerabilities
+# Are there limitations or vulnerabilites?
 While the Diffie-Hellman Key Exchange is a powerful tool for secure communication, it is not without its limitations and vulnerabilities. One of the main vulnerabilities is the **Man-in-the-Middle (MitM) attack**, where an attacker intercepts the public values exchanged between Alice and Bob and replaces them with their own. This allows the attacker to establish separate shared keys with both parties, effectively eavesdropping on all communication without either party realizing it. You may have noticed that in this algorithm, there is no actual verification that the one you are communicating with is the person you think it is. The algorithm only ensures that the shared key is secure, but it does not authenticate the parties involved in the exchange.
 Real protocols that implement Diffie-Hellman, such as TLS, often include additional steps to authenticate the parties and prevent MitM attacks, such as using digital certificates or pre-shared keys or authentication protocols like the Station-to-Station (STS) protocol. However, if Diffie-Hellman is implemented without proper authentication, it can be vulnerable to such attacks. Man-in-the-Middle attacks do pose a concern, but they can be mitigated with proper authentication mechanisms.
 
-# Real-World Applications
+# What are some real life instances where this algorithm is used?
 The Diffie-Hellman Key Exchange is widely used in various real-world applications to secure communication. One of the most common applications is in the aforementioned **Transport Layer Security (TLS)** protocol, which is used to secure web traffic (HTTPS). When you visit a secure website, your browser and the server use a form of Diffie-Hellman to establish a shared secret key that encrypts the data transmitted between them. This ensures that information, such as passwords and credit card numbers, cannot be intercepted by attackers.
 Another application is in **Virtual Private Networks (VPNs)**, where Diffie-Hellman is used to establish secure tunnels for data transmission over the internet. It is also used in **Secure Shell (SSH)** for secure remote login and command execution. Additionally, many messaging apps that offer end-to-end encryption, such as [WhatsApp](https://www.whatsapp.com/) and [Signal](https://signal.org/), use variations of the Diffie-Hellman algorithm to establish E2EE between users. The algorithm's ability to securely exchange keys over an insecure channel has made it a fundamental component of modern digital security, enabling private communication in a wide range of applications across the internet.
 
-# Extensions and Variants
+# What are some extensions or variants of this algorithm?
 Over the years, several extensions and variants of the Diffie-Hellman Key Exchange have been developed to enhance security and address specific use cases. One notable variant is the **Elliptic Curve Diffie-Hellman (ECDH)**, which uses elliptic curve cryptography to achieve the same level of security as traditional Diffie-Hellman but with smaller key sizes, making it more efficient and faster, especially for mobile devices.
 The signal protocol, used in apps like Signal, is an example of a more complex key exchange protocol that builds upon Diffie-Hellman. It incorporates multiple rounds of key exchange and additional cryptographic techniques to provide forward secrecy and resistance against various types of attacks.
 > Forward secrecy makes sure that even if a key is compromised in the future, past communication stays secure because the session keys used for encryption are not derived from the long-term key. This is achieved through the use of ephemeral keys that are generated for each session and discarded afterward. (ephemeral keys are temporary keys used for a single session and discarded).
