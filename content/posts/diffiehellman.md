@@ -1,5 +1,5 @@
 +++
-title = "Diffie-Hellman Key Exchange – The Algorithmic Backbone of Modern Digital Security"
+title = "What is the Algorithm that Protects our Communication Every Day?"
 date = "2026-03-02"
 author = "Abhay"
 cover = ""
@@ -17,11 +17,9 @@ To answer that, one must first define the problem and history at hand. In Ancien
 
 A solution did appear however, thanks to the work of Whitfield Diffie and Martin Hellman, who introduced the groundbreaking algorithm for key exchange in their paper *New Directions in Cryptography* (Diffie & Hellman, 1976). Their work outlined how two parties, even over a public channel where a hacker could be listening in, could securely exchange and arrive at a shared secret key. Their solution became known as Diffie-Hellman Key Exchange, and it solved the deeper problem of how two parties could agree on a secret key in the first place without ever meeting each other.
 
-> Symmetric Encryption - Encryption where the same key is used to encrypt and decrypt data. In modern computing, it is fast and secure when both the encrypting and decrypting party know the secret key used, but it does not tell us how that secret key should be exchanged in the first place
-
 Their solution and cryptography has allowed the internet to become what is is today. It laid the conceptual foundation for modern protocols such as HTTPS and SSH, and is the single most important baseline algorithm in allowing for E2EE in messaging. While we once needed in person meetups, we can now handle communication elegantly with computers and mathematics.
 
-# Algorithm Explanation
+# How does this algorithm work?
 To give a high level overview of the protocol, imagine this: Two friends, Alice and Bob, want to communicate with each other secretly.
 1. Alice and Bob publicly agree on a large number (a prime number `p`) and base number `g`.
 2. Alice and Bob both choose a secret, private number they never share beyond their computer. Alice's is `a` and Bob's is `b`
@@ -61,6 +59,8 @@ These values are calculated using modular exponentiation (`g^a mod p` and `g^b m
 **Final shared key (`K`)**  
 After receiving the other party’s public value, each participant performs another exponentiation step. Due to the mathematical properties of modular exponentiation: `(B^a mod p) = (A^b mod p)`. Both of these calculations arrive at the same value: `(g^ab mod p)`. This means both parties independently arrive at the same secret value `K`, which can then be used as the symmetric encryption key for secure communication.
 
+> Symmetric Encryption - Encryption where the same key is used to encrypt and decrypt data. In modern computing, it is fast and secure when both the encrypting and decrypting party know the secret key used, but it does not tell us how that secret key should be exchanged in the first place. Diffie-Hellman helps solve this problem.
+
 # Limitations and Vulnerabilities
 While the Diffie-Hellman Key Exchange is a powerful tool for secure communication, it is not without its limitations and vulnerabilities. One of the main vulnerabilities is the **Man-in-the-Middle (MitM) attack**, where an attacker intercepts the public values exchanged between Alice and Bob and replaces them with their own. This allows the attacker to establish separate shared keys with both parties, effectively eavesdropping on all communication without either party realizing it. You may have noticed that in this algorithm, there is no actual verification that the one you are communicating with is the person you think it is. The algorithm only ensures that the shared key is secure, but it does not authenticate the parties involved in the exchange.
 Real protocols that implement Diffie-Hellman, such as TLS, often include additional steps to authenticate the parties and prevent MitM attacks, such as using digital certificates or pre-shared keys or authentication protocols like the Station-to-Station (STS) protocol. However, if Diffie-Hellman is implemented without proper authentication, it can be vulnerable to such attacks. Man-in-the-Middle attacks do pose a concern, but they can be mitigated with proper authentication mechanisms.
@@ -76,7 +76,7 @@ The signal protocol, used in apps like Signal, is an example of a more complex k
 > The signal protocol is computationally, one of the most secure and robust key exchange protocols in use today. To learn more, visit https://signal.org/docs/. The articles on extended triple Diffie-Hellman (X3DH) and the Double Ratchet algorithm are the most relevant. They are technically complex, but these algorithms form the backbone for Signal's E2EE.
 
 # Conclusion
-Diffie-Hellman key exchange has revolutionizd the way we secure communication in the modern era. The human necessity to send and secure messages between parties in earlier eras has ultimately resulted in incredibly complex and elegant mathematical solutions to be created for today. The encryption that we use for something as simple as texting a friend or opening google.com in orders of magnitude better than the encryption used by Julius Caesar, and we have mathematics and pioneers like Diffie and Hellman to thank for that.
+Diffie-Hellman key exchange has revolutionized the way we secure communication in the modern era. The human necessity to send and secure messages between parties in earlier eras has ultimately resulted in incredibly complex and elegant mathematical solutions to be created for today. The encryption that we use for something as simple as texting a friend or opening google.com in orders of magnitude better than the encryption used by Julius Caesar, and we have mathematics and pioneers like Diffie and Hellman to thank for that.
 
 # Works Cited
 Computerphile. (2017, December 15). Secret key exchange (Diffie-Hellman) – Computerphile [Video]. YouTube. https://www.youtube.com/watch?v=NmM9HA2MQGI
