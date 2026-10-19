@@ -2,13 +2,7 @@
 title = "How to Build a Discord Bot in Node.js"
 date = "2026-02-05"
 author = "Abhay"
-cover = ""
-tags = []
-keywords = ["bots", "discord", "nodejs"]
 description = ""
-showFullContent = false
-readingTime = false
-hideComments = false
 +++
 
 # Introduction

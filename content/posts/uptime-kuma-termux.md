@@ -2,13 +2,7 @@
 title = "Running Uptime Kuma on my old phone"
 date = "2022-11-21"
 author = "Abhay"
-cover = ""
-tags = []
-keywords = ["uptime-kuma", "selfhosting", "termux", "cloudflare", "nodejs", "cloudflare-tunnels"]
 description = "The process by which I set up uptime-kuma on termux in my old android phone along with cloudflare tunnels"
-showFullContent = false
-readingTime = true
-hideComments = false
 +++
 # How I ran uptime-kuma on termux with cloudflare tunnels
 

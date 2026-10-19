@@ -2,13 +2,7 @@
 title = "College Applications: The Line Between Passion and Fluff"
 date = "2024-06-26"
 author = "Abhay"
-cover = ""
-tags = []
-keywords = ["school", "college"]
 description = "What is the true line between being passionate about a position and doing something for the college app?"
-showFullContent = false
-readingTime = true
-hideComments = false
 +++
 # College Applications: The Line Between Passion and Fluff
 

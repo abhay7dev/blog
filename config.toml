@@ -1,83 +1,69 @@
-# Bunch of things taken from https://gitlab.com/biplavxyz/biplavxyz.gitlab.io
+baseURL = "https://abhay7.dev/"
+locale = "en-US"
+defaultContentLanguage = "en"
+title = "Abhay's Blog"
+theme = "hugo-narrow"
+mainSections = ["posts"]
 
-baseurl = "/"
-languageCode = "en-us"
-theme = "terminal"
-paginate = 5
+[pagination]
+  pagerSize = 6
+  path = "page"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+[markup.goldmark.renderer]
+  unsafe = true
 
 [params]
-  # dir name of your main content (default is `content/posts`).
-  # the list of set content will show up on your index page (baseurl).
-  contentTypeName = "posts"
+  description = "Abhay's blog"
+  defaultAuthor = "Abhay"
+  language = "en"
+  shortName = "Abhay's Blog"
+  contentWidth = "90rem"
+  colorScheme = "twitter"
 
-  # ["orange", "blue", "red", "green", "pink"]
-  themeColor = "blue"
+[params.favicon]
+  svg = "/favicon.svg"
 
-  # if you set this to 0, only submenu trigger will be visible
-  showMenuItems = 5
+[params.header]
+  sticky = true
+  showThemeSwitch = false
+  showDarkModeSwitch = true
+  showContentWidthSwitch = false
+  showLanguageSwitch = false
 
-  # show selector to switch language
-  showLanguageSelector = false
+[params.header.logo]
+  image = ""
+  link = "/"
 
-  # set theme to full screen width
-  fullWidthTheme = false
+[params.home]
+  recentPostsCount = 8
+  contentOrder = ["recent-posts"]
 
-  # center theme with default width
-  centerTheme = true
+[params.post]
+  showRelated = true
 
-  # set a custom favicon (default is a `themeColor` square)
-  favicon = "favicon.svg"
+[params.post.license]
+  show = false
 
-  # set post to show the last updated
-  # If you use git, you can set `enableGitInfo` to `true` and then post will automatically get the last updated
-  showLastUpdated = false
-  # Provide a string as a prefix for the last update date. By default, it looks like this: 2020-xx-xx [Updated: 2020-xx-xx] :: Author
-  # updatedDatePrefix = "Updated"
+[params.toc]
+  enabled = true
+  position = "side"
 
-  # set all headings to their default size (depending on browser settings)
-  # it's set to `true` by default
-  # oneHeadingSize = false
+[params.comments]
+  enabled = true
+  system = "giscus"
 
-[params.twitter]
-  # set Twitter handles for Twitter cards
-  # see https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started#card-and-content-attribution
-  # do not include @
-  creator = ""
-  site = ""
-
-[languages]
-  [languages.en]
-    languageName = "English"
-    title = "Abhay's Blog"
-    subtitle = "Made with Hugo and panr's terminal theme"
-    owner = "Abhay"
-    keywords = ""
-    copyright = "Abhay"
-    #menuMore = "Show more"
-    readMore = "Read more"
-    readOtherPosts = "Read other posts"
-    missingContentMessage = "Page not found..."
-    missingBackButtonLabel = "Back to home page"
-
-    [languages.en.params.logo]
-      logoBlink = ">_"
-      logoText = "Abhay"
-      logoHomeLink = "/"
-
-    [languages.en.menu]
-      [[languages.en.menu.main]]
-        identifier = "rss"
-        name = "RSS Feed"
-        url = "/index.xml"
-      [[languages.en.menu.main]]
-        identifier = "github"
-        name = "GitHub"
-        url = "https://github.com/abhay7dev"
-      [[languages.en.menu.main]]
-        identifier = "replit"
-        name = "Replit"
-        url = "https://replit.com/@abhay7dev"
-      [[languages.en.menu.main]]
-        identifier = "main-site"
-        name = "abhay7.dev"
-        url = "https://abhay7.dev"
+[params.comments.giscus]
+  repo = "abhay7dev/blog"
+  repoId = "R_kgDOJUap1Q"
+  category = "Blog Posts"
+  categoryId = "DIC_kwDOJUap1c4CVpBJ"
+  mapping = "pathname"
+  strict = "0"
+  reactionsEnabled = "1"
+  emitMetadata = "0"
+  inputPosition = "top"
+  theme = "transparent_dark"
+  lang = "en"

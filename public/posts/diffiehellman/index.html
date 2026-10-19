@@ -1,0 +1,1500 @@
+<!doctype html><html
+  lang="en-US"
+  data-theme="twitter"
+  data-toc-pinned="false"
+>
+  <head><script src="/livereload.js?mindelay=10&amp;v=2&amp;port=1313&amp;path=livereload" data-no-instant defer></script>
+    <meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+<title>What is the Algorithm that Protects our Communication Every Day? |
+    Abhay&#39;s Blog</title>
+
+<meta
+  name="description"
+  content="What is the Diffie-Hellman Key Exchange protocol? How is it relevant in today’s world?"
+/>
+<meta
+  name="keywords"
+  content=""
+/>
+<meta
+  name="author"
+  content="Abhay"
+/>
+<meta name="language" content="en" />
+
+<meta
+  name="robots"
+  content="index, follow"
+/>
+<link rel="canonical" href="//localhost:1313/posts/diffiehellman/" />
+
+
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<link rel="manifest" href="/site.webmanifest" />
+<meta property="og:url" content="//localhost:1313/posts/diffiehellman/">
+	<meta property="og:site_name" content="Abhay&#39;s Blog">
+	<meta property="og:title" content="What is the Algorithm that Protects our Communication Every Day?">
+	<meta property="og:description" content="What is the Diffie-Hellman Key Exchange protocol? How is it relevant in today’s world?">
+	<meta property="og:locale" content="en_US">
+	<meta property="og:type" content="article">
+		<meta property="article:section" content="posts">
+		<meta property="article:published_time" content="2026-03-02T00:00:00+00:00">
+		<meta property="article:modified_time" content="2026-03-02T00:00:00+00:00">
+
+
+	<meta name="twitter:card" content="summary">
+	<meta name="twitter:title" content="What is the Algorithm that Protects our Communication Every Day?">
+	<meta name="twitter:description" content="What is the Diffie-Hellman Key Exchange protocol? How is it relevant in today’s world?">
+
+
+	<meta itemprop="name" content="What is the Algorithm that Protects our Communication Every Day?">
+	<meta itemprop="description" content="What is the Diffie-Hellman Key Exchange protocol? How is it relevant in today’s world?">
+	<meta itemprop="datePublished" content="2026-03-02T00:00:00+00:00">
+	<meta itemprop="dateModified" content="2026-03-02T00:00:00+00:00">
+	<meta itemprop="wordCount" content="2148">
+
+
+
+
+
+<script id="search-config" type="application/json">"{\"searchIndexURL\":\"/index.json\"}"</script>
+
+
+
+
+
+
+  
+    <link rel="stylesheet" href="/css/compiled.css" />
+  
+
+
+
+
+  
+    <link rel="stylesheet" href="/css/chroma.css" />
+  
+
+
+
+
+
+
+      <script src="/js/main.js" defer></script>
+
+
+
+          <script src="/js/toc.js" defer></script>
+
+
+
+      <script src="/js/search.js" defer></script>
+
+
+
+      <script src="/js/dock.js" defer></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    
+    <script>(function(){const e=document.documentElement,o=localStorage.getItem("theme")||"system",m=localStorage.getItem("colorScheme")||"twitter",n=Number.parseInt(localStorage.getItem("contentWidth"),10),d=Number.isInteger(n)&&n>=40&&n<=90;d&&e.style.setProperty("--content-width",`${n}rem`),e.setAttribute("data-theme",m);const s=localStorage.getItem("tocPinned");(s==="true"||s==="false")&&e.setAttribute("data-toc-pinned",s);const t=Number.parseFloat(getComputedStyle(e).fontSize)||16,u="90rem",i=Number.parseFloat(u);let a=56*t;Number.isFinite(i)&&(a=/r?em\s*$/.test(u)?i*t:i),d&&(a=n*t);const r=e.clientWidth,c=Math.max(0,(r-Math.min(a,r))/2);let l="narrow";r>=64*t&&(c>=13*t?l="wide":c>=2*t&&(l="tight")),e.setAttribute("data-toc-space",l),e.style.setProperty("--toc-gutter",`${Math.round(c)}px`);function h(){o==="dark"||o==="system"&&window.matchMedia("(prefers-color-scheme: dark)").matches?e.classList.add("dark"):e.classList.remove("dark")}h(),o==="system"&&window.matchMedia("(prefers-color-scheme: dark)").addEventListener("change",h)})()</script>
+  </head><body class="bg-background text-foreground min-h-screen antialiased">
+    <main
+      id="page-container"
+      class="mx-auto w-full"
+      style="--content-width-base: 90rem; max-width: var(--content-width, var(--content-width-base))"
+    >
+      <div
+    id="reading-progress-bar"
+    class="from-primary to-primary/80 pointer-events-none fixed top-0 left-0 z-50 h-[3px] w-0 bg-linear-to-r transition-[width] duration-150 ease-out"
+  ></div>
+
+  <script>
+    (function () {
+      const bar = document.getElementById("reading-progress-bar");
+      if (!bar) return;
+
+      function update() {
+        const scrolled = window.scrollY;
+        const total = document.documentElement.scrollHeight - window.innerHeight;
+        bar.style.width = total > 0 ? (scrolled / total) * 100 + "%" : "0%";
+      }
+
+      let ticking = false;
+      window.addEventListener(
+        "scroll",
+        () => {
+          if (!ticking) {
+            requestAnimationFrame(() => {
+              update();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        },
+        { passive: true }
+      );
+
+      update();
+    })();
+  </script>
+
+      <header class="sticky top-0 z-50 px-4 py-6">
+  <div
+    class="border-border bg-card/80 flex items-center rounded-xl border px-6 py-4 shadow-sm backdrop-blur-sm"
+  >
+    
+    <div class="hidden w-full items-center md:flex md:min-w-0">
+      
+      <div class="flex items-center">
+        
+          
+          <a
+            href="/"
+            class="bg-primary text-primary-foreground hover:bg-primary/90 flex h-10 w-10 items-center justify-center rounded-full text-lg font-bold transition-transform duration-200 hover:scale-105"
+            aria-label="Abhay&#39;s Blog"
+          >
+            A
+          </a>
+        
+      </div>
+
+      
+      <nav class="mx-8 flex min-w-0 flex-1 items-center justify-center">
+        <div class="flex flex-wrap items-center justify-center space-x-1">
+          
+          
+        </div>
+      </nav>
+
+      
+      <div class="flex items-center space-x-2">
+        
+        
+
+
+        
+        
+
+
+        
+        
+
+
+        
+        <div class="relative">
+    <button
+      id="theme-toggle"
+      class="dropdown-toggle border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-300 ease-out hover:scale-105 focus:ring-2 focus:outline-none active:scale-95"
+      data-dropdown-type="theme"
+      aria-label="Toggle theme"
+      aria-expanded="false"
+      aria-haspopup="true"
+    ><svg class="h-5 w-5 sun-icon hidden relative z-10" aria-label="Light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>
+
+        <svg class="h-5 w-5 moon-icon hidden relative z-10" aria-label="Dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>
+
+        <svg class="h-5 w-5 system-icon hidden relative z-10" aria-label="System" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+</svg>
+</button>
+
+    <div
+      id="theme-dropdown"
+      class="dropdown-menu border-border bg-popover/95 w-40 absolute top-12 right-0 z-60 hidden rounded-lg border p-1 shadow-lg backdrop-blur-sm transition-all duration-200 ease-out"
+      data-dropdown-type="theme"
+      
+    ><button data-theme="light" class="text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full items-center rounded-md px-4 py-2 text-sm transition-all duration-200 ease-out focus:outline-none"><svg class="h-5 w-5 mr-3 h-4 w-4" aria-label="Light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>
+<span>Light</span></button><button data-theme="dark" class="text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full items-center rounded-md px-4 py-2 text-sm transition-all duration-200 ease-out focus:outline-none"><svg class="h-5 w-5 mr-3 h-4 w-4" aria-label="Dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>
+<span>Dark</span></button><button data-theme="system" class="text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full items-center rounded-md px-4 py-2 text-sm transition-all duration-200 ease-out focus:outline-none"><svg class="h-5 w-5 mr-3 h-4 w-4" aria-label="System" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+</svg>
+<span>System</span></button></div>
+  </div>
+      </div>
+    </div>
+
+    
+    <div class="flex w-full items-center justify-between md:hidden">
+      
+      
+<button
+  id="mobile-nav-toggle"
+  class="nav-panel-toggle border-border bg-background text-muted-foreground hover:bg-accent hover:text-foreground flex h-10 w-10 items-center justify-center rounded-lg border transition-colors duration-200"
+  aria-label="Menu"
+  aria-expanded="false"
+  aria-controls="mobile-nav-panel"
+>
+  <svg class="h-5 w-5" aria-label="Menu" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+</svg>
+
+</button>
+
+
+
+      
+      <div class="flex items-center space-x-2">
+        
+        
+
+
+        
+        
+
+
+        
+        <div class="relative">
+    <button
+      id="theme-toggle"
+      class="dropdown-toggle border-border bg-background text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 flex h-10 w-10 items-center justify-center rounded-lg border transition-all duration-300 ease-out hover:scale-105 focus:ring-2 focus:outline-none active:scale-95"
+      data-dropdown-type="theme"
+      aria-label="Toggle theme"
+      aria-expanded="false"
+      aria-haspopup="true"
+    ><svg class="h-5 w-5 sun-icon hidden relative z-10" aria-label="Light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>
+
+        <svg class="h-5 w-5 moon-icon hidden relative z-10" aria-label="Dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>
+
+        <svg class="h-5 w-5 system-icon hidden relative z-10" aria-label="System" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+</svg>
+</button>
+
+    <div
+      id="theme-dropdown"
+      class="dropdown-menu border-border bg-popover/95 w-40 absolute top-12 right-0 z-60 hidden rounded-lg border p-1 shadow-lg backdrop-blur-sm transition-all duration-200 ease-out"
+      data-dropdown-type="theme"
+      
+    ><button data-theme="light" class="text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full items-center rounded-md px-4 py-2 text-sm transition-all duration-200 ease-out focus:outline-none"><svg class="h-5 w-5 mr-3 h-4 w-4" aria-label="Light" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+</svg>
+<span>Light</span></button><button data-theme="dark" class="text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full items-center rounded-md px-4 py-2 text-sm transition-all duration-200 ease-out focus:outline-none"><svg class="h-5 w-5 mr-3 h-4 w-4" aria-label="Dark" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+</svg>
+<span>Dark</span></button><button data-theme="system" class="text-accent-foreground hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground flex w-full items-center rounded-md px-4 py-2 text-sm transition-all duration-200 ease-out focus:outline-none"><svg class="h-5 w-5 mr-3 h-4 w-4" aria-label="System" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+</svg>
+<span>System</span></button></div>
+  </div>
+      </div>
+    </div>
+  </div>
+
+  
+  
+<div
+  id="mobile-nav-panel"
+  class="mt-2 hidden md:hidden"
+  role="navigation"
+  aria-label="Menu"
+  aria-hidden="true"
+  tabindex="-1"
+>
+  <div
+    class="border-border bg-popover/95 overflow-hidden rounded-xl border shadow-lg backdrop-blur-sm"
+  >
+    
+    <nav class="flex flex-col p-2">
+      
+      
+    </nav>
+  </div>
+</div>
+
+</header>
+
+
+
+      <div class="px-4 py-6">
+        
+  <nav class="breadcrumb mb-4 py-1 md:mb-6" aria-label="Breadcrumb">
+    <ol
+      class="text-muted-foreground scrollbar-hide flex items-center space-x-1 overflow-x-auto py-1 text-sm whitespace-nowrap md:space-x-2"
+    >
+      
+        
+          
+          <li class="shrink-0">
+            <a
+              href="/"
+              class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex items-center gap-1 rounded-lg px-1 py-0.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] md:py-1.5"
+            >
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m3 12 2-2m0 0 7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" />
+</svg>
+
+              <span class="max-w-16 truncate md:max-w-none">Abhay&#39;s Blog</span>
+            </a>
+          </li>
+        
+      
+        
+          
+          <li class="flex min-w-0 items-center gap-1 md:gap-2">
+            <span class="text-muted-foreground/50 shrink-0"
+              ><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+            </span>
+            <a
+              href="/posts/"
+              class="text-muted-foreground hover:text-primary hover:bg-primary/10 flex shrink-0 items-center gap-1 rounded-lg px-1 py-0.5 transition-all duration-200 ease-out hover:-translate-y-0.5 hover:scale-[1.02] md:px-3 md:py-1.5"
+            >
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2h-6l-2-2H5a2 2 0 00-2 2z" />
+</svg>
+              <span class="max-w-16 truncate md:max-w-none">Posts</span>
+            </a>
+          </li>
+        
+      
+
+
+      
+      <li class="flex min-w-0 items-center gap-1 md:gap-2">
+        <span class="text-muted-foreground/50 shrink-0"
+          ><svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+        </span>
+        <span class="text-foreground flex min-w-0 items-center gap-1 font-medium">
+          <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" />
+</svg>
+          <span class="max-w-32 truncate md:max-w-[16rem] lg:max-w-none">What is the Algorithm that Protects our Communication Every Day?</span>
+        </span>
+      </li>
+    </ol>
+  </nav>
+
+
+        
+  
+
+
+  
+  <header class="mb-8">
+    
+
+
+
+
+<div class="post-meta mb-8">
+  
+  
+    <h1 class="text-foreground mb-6 text-3xl leading-tight font-bold md:text-4xl">
+      What is the Algorithm that Protects our Communication Every Day?
+    </h1>
+  
+
+  
+  
+
+  
+  <div class="bg-card border-border rounded-xl border">
+
+    
+        
+        <div class="p-6">
+
+          
+          <div class="text-muted-foreground flex flex-wrap items-center gap-3 text-sm mb-4">
+            
+            
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+
+              <time datetime="2026-03-02">
+                March 2, 2026
+              </time>
+            </div>
+            
+
+            
+            
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
+</svg>
+
+              <span>11 min</span>
+            </div>
+            
+
+            
+            
+            <div class="flex items-center gap-2">
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+</svg>
+
+              <span>2148 words</span>
+            </div>
+            
+          </div>
+
+          
+          <div class="text-muted-foreground space-y-3 pt-4 border-t border-border">
+          </div>
+    </div>
+  </div>
+</div>
+
+  </header>
+
+  
+  <article class="prose prose-neutral dark:prose-invert mb-12 max-w-none">
+    <h1 id="introduction">Introduction<a href="#introduction" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>Every single day, millions of people send messages that can travel almost invisibly across the world in milliseconds. Users of WhatsApp, iMessage, Signal, and many other popular apps are all told their messages are &ldquo;end-to-end encrypted,&rdquo; but what does that truly mean? What does it mean for communication to have <strong>End-to-End encryption (E2EE)</strong>, and what is going on behind the scenes?</p>
+<p>To answer that, one must first define the problem and history at hand. In Ancient Rome, Julius Caesar protected military messages using the Caesar Cipher, a letter shifting technique scrambled such that only someone with the correct shift amount would be able to read it. In World War II, Germany&rsquo;s Enigma device mechanized encryption and the sharing of messages, increasing complexity massively. But one problem still remained throughout all of history: both parties needed to know what that secret, shared key was. There has to have been some communication between the parties at some point so that the secret key could be shared in some way. But how could you share that secret key securely, if you don&rsquo;t have your secured form of communication? The most obvious physical method is to meet in person, but in the world of the computers, people needed a way to share these secret keys without ever meeting or seeing one another. How could one securely share messages over computers otherwise? This issue is known as the key distribution problem. How can we share keys securely over an insecure, unknown middle channel.</p>
+<p>A solution did appear however, thanks to the work of Whitfield Diffie and Martin Hellman, who introduced the groundbreaking algorithm for key exchange in their paper <em>New Directions in Cryptography</em> (Diffie &amp; Hellman, 1976). Their work outlined how two parties, even over a public channel where a hacker could be listening in, could securely exchange and arrive at a shared secret key. Their solution became known as Diffie-Hellman Key Exchange, and it solved the deeper problem of how two parties could agree on a secret key in the first place without ever meeting each other.</p>
+<p>Their solution and cryptography has allowed the internet to become what is is today. It laid the conceptual foundation for modern protocols such as HTTPS and SSH, and is the single most important baseline algorithm in allowing for E2EE in messaging. While we once needed in person meetups, we can now handle communication elegantly with computers and mathematics.</p>
+<h1 id="how-does-this-algorithm-work">How does this algorithm work?<a href="#how-does-this-algorithm-work" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>
+<figure
+  class="image-figure not-prose my-8"
+  data-lightbox-enabled="
+    false
+  "
+  data-gallery-type="auto"
+  data-image-width="0"
+  data-image-height="0"
+  data-image-src="/diffiehellman/wikipic.png"
+>
+  <div class="image-container">
+    <img
+    src="/diffiehellman/wikipic.png"
+    alt="Wikipedia Image showing the algorithm in action with mock numbers"
+    
+    
+    loading="lazy"
+    decoding="async"
+    data-gallery-src="/diffiehellman/wikipic.png"
+    data-gallery-alt="Wikipedia Image showing the algorithm in action with mock numbers"
+    data-gallery-title=""
+  /></div>
+
+  </figure>
+</p>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>(Wikipedia, 2019)</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<p>To understand the Diffie-Hellman Key exchange protocol, let&rsquo;s begin by imagining two friends, named Alice and Bob. They want to communicate in private but there is only a public channel where they can exchange messages. Diffie-Hellman allows them to arrive at at a shared secret, symmetric key that can be used to send messages across the network.</p>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>Symmetric Encryption - Encryption where the same key is used to encrypt and decrypt data. In modern computing, it is fast and secure when both the encrypting and decrypting party know the secret key used, but it does not tell us how that secret key should be exchanged in the first place. Diffie-Hellman helps solve this problem.</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<p>Let&rsquo;s walk through the protocol step by step:</p>
+<h4 id="step-1-agree-on-the-public-numbers">Step 1: Agree on the Public Numbers<a href="#step-1-agree-on-the-public-numbers" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p>Alice and Bob publicly agree on two numbers:</p>
+<ul>
+<li>A <strong>large prime number</strong> <code>p</code></li>
+<li>A <strong>base (generator)</strong> <code>g</code>
+These public numbers are used for the overall key exchange process, and they are shared in open to the public.
+For this example, we will use</li>
+<li><code>p = 23</code> (a prime number)</li>
+<li><code>g = 5</code> (a base number)</li>
+</ul>
+<h4 id="step-2-choose-private-numbers">Step 2: Choose Private Numbers<a href="#step-2-choose-private-numbers" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p>Next, both Alice and Bob choose their own private numbers, which they will never share.</p>
+<ul>
+<li>Alice chooses a Prime number <code>a = 4</code></li>
+<li>Bob chooses a Prime number <code>b = 3</code>
+These numbers must remain secret and not leave their computers.</li>
+</ul>
+<h4 id="step-3-create-public-values">Step 3: Create Public Values<a href="#step-3-create-public-values" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p>Using <strong>modular exponentiation</strong>, Alice and Bob combine their private values with public values to create new numbers to exchange.</p>
+<ul>
+<li>Alice calculates <code>A = g^a mod p</code>
+<ul>
+<li><code>A = 5^4 mod 23</code></li>
+<li><code>A = 4</code></li>
+</ul>
+</li>
+<li>Bob calculates <code>B = g^a mod p</code>
+<ul>
+<li><code>B = 5^3 mod 23</code></li>
+<li><code>A = 10</code>
+Alice sends <code>A</code> to Bob, while Bob sends <code>B</code> to Alice. These calculated values are public and are visible to anyone peering into the public network.</li>
+</ul>
+</li>
+</ul>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>Modular Exponentiation is a mathematical operation involving exponents and the remainders in division, also called the modulo. Imagine a clock with 12 hours. If you add 3 hours to 11 o&rsquo;clock, you get 2 o&rsquo;clock. This is because 11 + 3 = 14, which when divided by 12 gives a remainder of 2. Even if you added 15 hours to 11 o&rsquo;clock, you would still get 2 o&rsquo;clock because 11 + 15 = 25, which divided by 12 still gives a remainder of 2. In the context of Diffie-Hellman, modular exponentiation helps create values that are really easy to compute in one direction, (going from 11 to 2 o&rsquo;clock), but super difficult to go backwards (just because you have 2 o&rsquo;clock, you can&rsquo;t easily figure out if it came from 11 o&rsquo;clock + 3 hours, or 11 o&rsquo;clock + 15 hours, or any other similar combination). This helps keep the algorithm secure, because it is super difficult to take the public values and figure out the private numbers used to make them.</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<h4 id="step-4-compute-the-shared-secret-key">Step 4: Compute the Shared Secret Key<a href="#step-4-compute-the-shared-secret-key" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p>Here is where the encryption and mathematical magic happens. Each person receives the other person&rsquo;s public value, and then combines it with their own private number to compute the shared secret key <code>K</code>.</p>
+<ul>
+<li>Alice calculates <code>K = B^a mod p</code>
+<ul>
+<li><code>K = 10^4 mod 23</code></li>
+<li><code>K = 18</code></li>
+</ul>
+</li>
+<li>Bob calculates <code>K = A^b mod p</code>
+<ul>
+<li><code>K = 4^3 mod 23</code></li>
+<li><code>K = 18</code>
+Even though Alice and Bob use separate calculations to arrive at K, they still arrive at the same K value (TutorialsPoint, 2024). This number <code>K</code> can now be used as a symmetric encryption key to securely communicate, and the middle server never learned what <code>K</code>, the secret key, ever was!</li>
+</ul>
+</li>
+</ul>
+<p>Here is a visual table representing the steps for this key exchange.</p>
+<table>
+	<thead>
+			<tr>
+					<th>Alice</th>
+					<th>Public Middleman / Network</th>
+					<th>Bob</th>
+			</tr>
+	</thead>
+	<tbody>
+			<tr>
+					<td>Private number <code>a = 4</code></td>
+					<td>Public parameters <code>p = 23</code>, <code>g = 5</code></td>
+					<td>Private number <code>b = 33</code></td>
+			</tr>
+			<tr>
+					<td>Computes <code>A = 5^4 mod 23 = 4</code></td>
+					<td>Values <code>A</code> and <code>B</code> are transmitted across the network</td>
+					<td>Computes <code>B = 5^33 mod 23 = 20</code></td>
+			</tr>
+			<tr>
+					<td>Sends <code>A = 4</code></td>
+					<td>Anyone can see these numbers</td>
+					<td>Sends <code>B = 20</code></td>
+			</tr>
+			<tr>
+					<td>Computes <code>K = 20^4 mod 23 = 6</code></td>
+					<td>The middleman cannot compute <code>K</code> because <code>a</code> and <code>b</code> remain secret</td>
+					<td>Computes <code>K = 4^33 mod 23 = 6</code></td>
+			</tr>
+	</tbody>
+</table>
+<h4 id="further-explanation-of-the-numbers">Further Explanation of the Numbers<a href="#further-explanation-of-the-numbers" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h4><p><strong>Prime number (<code>p</code>)</strong><br>
+A large prime number is chosen publicly by both parties. Prime numbers are useful in cryptography because modular arithmetic over primes has strong mathematical properties that make reversing exponentiation extremely difficult.</p>
+<p><strong>Base / Generator (<code>g</code>)</strong><br>
+The base (sometimes called a generator) is another public value used to create exponentiation values. When combined with modular arithmetic, it produces numbers that appear random but still follow predictable mathematical rules for both participants.</p>
+<p><strong>Private numbers (<code>a</code> and <code>b</code>)</strong><br>
+Alice and Bob choose a secret number that is never shared. These numbers are core secrets of the exchange. They stay private so that attackers cannot reproduce the calculations needed to generate the shared key.</p>
+<p><strong>Public exchange values (<code>A</code> and <code>B</code>)</strong><br>
+These values are calculated using modular exponentiation (<code>g^a mod p</code> and <code>g^b mod p</code>). They can safely be transmitted over a public network because reversing them to discover <code>a</code> or <code>b</code> would require solving the <strong>discrete logarithm problem</strong>, which is computationally infeasible for large numbers. Even if an attacker knows <code>p</code>, they cannot easily derive the private numbers <code>a</code> or <code>b</code> from the public values due to the complexity of the discrete logarithm problem (Computerphile, 2017).</p>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>To learn more about the discrete logarithm problem, see this video: <a
+    href="https://www.youtube.com/watch?v=SL7J8hPKEWY2MQGI"target="_blank"
+    class="inline-flex items-center gap-1"
+  >https://www.youtube.com/watch?v=SL7J8hPKEWY2MQGI<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a>. This problem is the mathematical foundation of the security of the Diffie-Hellman algorithm, and is what makes it so secure against eavesdropping.</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<p><strong>Final shared key (<code>K</code>)</strong><br>
+After receiving the other party’s public value, each participant performs another exponentiation step. Due to the mathematical properties of modular exponentiation: <code>(B^a mod p) = (A^b mod p)</code>. Both of these calculations arrive at the same value: <code>(g^ab mod p)</code>. This means both parties independently arrive at the same secret value <code>K</code>, which can then be used as the symmetric encryption key for secure communication.</p>
+<h1 id="are-there-limitations-or-vulnerabilities">Are there limitations or vulnerabilities?<a href="#are-there-limitations-or-vulnerabilities" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>While the Diffie-Hellman Key Exchange is a powerful tool for secure communication, it is not without its limitations and vulnerabilities. One of the main vulnerabilities is the <strong>Man-in-the-Middle (MitM) attack</strong>, where an attacker intercepts the public values exchanged between Alice and Bob and replaces them with their own. This allows the attacker to establish separate shared keys with both parties, effectively eavesdropping on all communication without either party realizing it. You may have noticed that in this algorithm, there is no actual verification that the one you are communicating with is the person you think it is. The algorithm only ensures that the shared key is secure, but it does not authenticate the parties involved in the exchange.
+Real protocols that implement Diffie-Hellman, such as TLS, often include additional steps to authenticate the parties and prevent MitM attacks, such as using digital certificates or pre-shared keys or authentication protocols like the Station-to-Station (STS) protocol. However, if Diffie-Hellman is implemented without proper authentication, it can be vulnerable to such attacks. Man-in-the-Middle attacks do pose a concern, but they can be mitigated with proper authentication mechanisms.</p>
+<h1 id="what-are-some-real-life-instances-where-this-algorithm-is-used">What are some real life instances where this algorithm is used?<a href="#what-are-some-real-life-instances-where-this-algorithm-is-used" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>The Diffie-Hellman Key Exchange is widely used in various real-world applications to secure communication. One of the most common applications is in the aforementioned <strong>Transport Layer Security (TLS)</strong> protocol, which is used to secure web traffic (HTTPS). When you visit a secure website, your browser and the server use a form of Diffie-Hellman to establish a shared secret key that encrypts the data transmitted between them. This ensures that information, such as passwords and credit card numbers, cannot be intercepted by attackers.
+Another application is in <strong>Virtual Private Networks (VPNs)</strong>, where Diffie-Hellman is used to establish secure tunnels for data transmission over the internet. It is also used in <strong>Secure Shell (SSH)</strong> for secure remote login and command execution. Additionally, many messaging apps that offer end-to-end encryption, such as <a
+    href="https://www.whatsapp.com/"target="_blank"
+    class="inline-flex items-center gap-1"
+  >WhatsApp<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a> and <a
+    href="https://signal.org/"target="_blank"
+    class="inline-flex items-center gap-1"
+  >Signal<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a>, use variations of the Diffie-Hellman algorithm to establish E2EE between users. The algorithm&rsquo;s ability to securely exchange keys over an insecure channel has made it a fundamental component of modern digital security, enabling private communication in a wide range of applications across the internet.</p>
+<h1 id="what-are-some-extensions-or-variants-of-this-algorithm">What are some extensions or variants of this algorithm?<a href="#what-are-some-extensions-or-variants-of-this-algorithm" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>Over the years, several extensions and variants of the Diffie-Hellman Key Exchange have been developed to enhance security and address specific use cases. One notable variant is the <strong>Elliptic Curve Diffie-Hellman (ECDH)</strong>, which uses elliptic curve cryptography to achieve the same level of security as traditional Diffie-Hellman but with smaller key sizes, making it more efficient and faster, especially for mobile devices.
+The signal protocol, used in apps like Signal, is an example of a more complex key exchange protocol that builds upon Diffie-Hellman. It incorporates multiple rounds of key exchange and additional cryptographic techniques to provide forward secrecy and resistance against various types of attacks.</p>
+
+  <blockquote
+    class="border-primary bg-muted/30 hover:bg-muted/40 my-6 rounded-r-lg border-l-4 py-4 pr-4 pl-6 italic transition-all duration-200 ease-out hover:translate-x-1"
+  >
+    <div class="prose prose-sm max-w-none">
+      <p>Forward secrecy makes sure that even if a key is compromised in the future, past communication stays secure because the session keys used for encryption are not derived from the long-term key. This is achieved through the use of ephemeral keys that are generated for each session and discarded afterward. (ephemeral keys are temporary keys used for a single session and discarded).
+The signal protocol is computationally, one of the most secure and robust key exchange protocols in use today. To learn more, visit <a
+    href="https://signal.org/docs/"target="_blank"
+    class="inline-flex items-center gap-1"
+  >https://signal.org/docs/<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a>. The articles on extended triple Diffie-Hellman (X3DH) and the Double Ratchet algorithm are the most relevant. They are technically complex, but these algorithms form the backbone for Signal&rsquo;s E2EE.</p>
+
+    </div>
+  </blockquote><script>
+  function toggleAlert(alertId) {
+    const content = document.getElementById(alertId + "-content");
+    const chevron = document.getElementById(alertId + "-chevron");
+    const header = content.previousElementSibling;
+
+    if (content.classList.contains("hidden")) {
+      content.classList.remove("hidden");
+      chevron.style.transform = "rotate(0deg)";
+      header.setAttribute("aria-expanded", "true");
+    } else {
+      content.classList.add("hidden");
+      chevron.style.transform = "rotate(-90deg)";
+      header.setAttribute("aria-expanded", "false");
+    }
+  }
+
+  
+  document.addEventListener("DOMContentLoaded", function () {
+    const collapsedAlerts = document.querySelectorAll(".alert-content.hidden");
+    collapsedAlerts.forEach(function (content) {
+      const alertId = content.id.replace("-content", "");
+      const chevron = document.getElementById(alertId + "-chevron");
+      if (chevron) {
+        chevron.style.transform = "rotate(-90deg)";
+      }
+    });
+  });
+</script>
+<h1 id="conclusion">Conclusion<a href="#conclusion" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>Diffie-Hellman key exchange has revolutionized the way we secure communication in the modern era. The human necessity to send and secure messages between parties in earlier eras has ultimately resulted in incredibly complex and elegant mathematical solutions to be created for today. The encryption that we use for something as simple as texting a friend or opening google.com in orders of magnitude better than the encryption used by Julius Caesar, and we have mathematics and pioneers like Diffie and Hellman to thank for that.</p>
+<h1 id="works-cited">Works Cited<a href="#works-cited" class="heading-anchor" aria-label="Link to this section"><svg class="h-4 w-4" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"/></g></svg></a></h1><p>Computerphile. (2017, December 15). Secret key exchange (Diffie-Hellman) – Computerphile [Video]. YouTube. <a
+    href="https://www.youtube.com/watch?v=NmM9HA2MQGI"target="_blank"
+    class="inline-flex items-center gap-1"
+  >https://www.youtube.com/watch?v=NmM9HA2MQGI<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a></p>
+<p>Diffie, W., &amp; Hellman, M. E. (1976). New directions in cryptography. IEEE Transactions on Information Theory, 22(6), 644–654. <a
+    href="https://doi.org/10.1109/TIT.1976.1055638"target="_blank"
+    class="inline-flex items-center gap-1"
+  >https://doi.org/10.1109/TIT.1976.1055638<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a></p>
+<p>TutorialsPoint. (2024). Cryptography – Diffie-Hellman algorithm. <a
+    href="https://www.tutorialspoint.com/cryptography/cryptography_diffie_hellman_algorithm.htm"target="_blank"
+    class="inline-flex items-center gap-1"
+  >https://www.tutorialspoint.com/cryptography/cryptography_diffie_hellman_algorithm.htm<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a></p>
+<p>Wikipedia contributors. (2019, December 10). Diffie–Hellman key exchange. Wikipedia. <a
+    href="https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange"target="_blank"
+    class="inline-flex items-center gap-1"
+  >https://en.wikipedia.org/wiki/Diffie%E2%80%93Hellman_key_exchange<svg class="h-3 w-3 flex-shrink-0" id="external-link" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>
+  </a></p>
+
+  </article>
+
+  
+  
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+  <nav class="post-navigation mb-12">
+    <div class="grid grid-cols-1 gap-4 md:grid-cols-2">
+      
+      <div class="nav-item">
+        
+          <a
+            href="/posts/discordbot/"
+            class="group bg-card border-border hover:bg-primary/5 hover:border-primary/20 focus:ring-primary/20 flex min-h-[140px] flex-col justify-between rounded-xl border p-6 transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-lg focus:ring-2 focus:outline-none"
+          >
+            <div>
+              <div class="mb-3 flex items-center gap-3">
+                <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7" />
+</svg>
+                <span class="text-muted-foreground text-sm font-medium">
+                  Previous
+                </span>
+              </div>
+
+              <h3
+                class="text-foreground group-hover:text-primary mb-3 line-clamp-2 text-lg leading-tight font-semibold transition-colors duration-200"
+              >
+                How to Build a Discord Bot in Node.js
+              </h3>
+            </div>
+
+            <div class="text-muted-foreground mt-auto flex items-center gap-2 text-xs">
+              <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+</svg>
+
+              <time datetime="2026-02-05">
+                2/5/26
+              </time>
+            </div>
+          </a>
+        
+      </div>
+
+      
+      <div class="nav-item">
+        
+          <div
+            class="bg-muted/30 border-border/50 flex min-h-[140px] flex-col justify-center rounded-xl border p-6"
+          >
+            <div class="mb-3 flex items-center justify-end gap-3">
+              <span class="text-muted-foreground/50 text-sm font-medium">
+                No next
+              </span>
+              <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+</svg>
+            </div>
+          </div>
+        
+      </div>
+    </div>
+  </nav>
+
+
+
+
+  
+  
+
+
+
+
+
+
+
+
+
+
+  
+  <section
+    id="comments"
+    class="bg-card border-border mx-auto mt-12 rounded-2xl border p-8 px-4 shadow-sm"
+  >
+    <div class="bg-card">
+      <h2 class="text-foreground mb-6 flex items-center gap-3 text-2xl font-bold">
+        <svg class="h-6 w-6" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+</svg>
+
+        Comments
+      </h2>
+
+      <div class="comments-container">
+
+
+
+
+
+  <div id="giscus-comments" class="giscus-container">
+    <script
+      src="https://giscus.app/client.js"
+      data-repo="abhay7dev/blog"
+      data-repo-id="R_kgDOJUap1Q"
+      data-category="Blog Posts"
+      data-category-id="DIC_kwDOJUap1c4CVpBJ"
+      data-mapping="pathname"
+      data-strict="0"
+      data-reactions-enabled="1"
+      data-emit-metadata="0"
+      data-input-position="top"
+      data-theme="transparent_dark"
+      data-lang="en"
+      data-loading="lazy"
+      crossorigin="anonymous"
+      async
+    ></script>
+  </div>
+
+  
+  <script>
+    (function() {
+      'use strict';
+
+      
+      function getCurrentTheme() {
+        
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+          return savedTheme;
+        }
+
+        
+        if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+          return 'dark';
+        }
+
+        
+        if (document.documentElement.classList.contains('dark')) {
+          return 'dark';
+        }
+
+        
+        return 'light';
+      }
+
+      
+      function updateGiscusTheme() {
+        const iframe = document.querySelector('#giscus-comments iframe.giscus-frame');
+        if (!iframe) return;
+
+        const theme = getCurrentTheme();
+
+        
+        iframe.contentWindow.postMessage({
+          giscus: {
+            setConfig: {
+              theme: theme
+            }
+          }
+        }, 'https://giscus.app');
+      }
+
+      
+      function initializeGiscusTheme() {
+        
+        const checkIframe = setInterval(() => {
+          const iframe = document.querySelector('#giscus-comments iframe.giscus-frame');
+          if (iframe) {
+            clearInterval(checkIframe);
+
+            
+            iframe.addEventListener('load', () => {
+              updateGiscusTheme();
+            });
+
+            
+            if (iframe.contentWindow && iframe.contentWindow.postMessage) {
+              updateGiscusTheme();
+            }
+          }
+        }, 100);
+
+        
+        setTimeout(() => {
+          clearInterval(checkIframe);
+        }, 5000);
+      }
+
+      
+      document.addEventListener('themeChanged', updateGiscusTheme);
+
+      
+      window.addEventListener('storage', (e) => {
+        if (e.key === 'theme') {
+          updateGiscusTheme();
+        }
+      });
+
+      
+      if (window.matchMedia) {
+        const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+        darkModeQuery.addEventListener('change', () => {
+          updateGiscusTheme();
+        });
+      }
+
+      
+      const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+          if (mutation.type === 'attributes' && mutation.attributeName === 'class') {
+            updateGiscusTheme();
+          }
+        });
+      });
+
+      observer.observe(document.documentElement, {
+        attributes: true,
+        attributeFilter: ['class']
+      });
+
+      
+      document.addEventListener('visibilitychange', () => {
+        if (!document.hidden) {
+          updateGiscusTheme();
+        }
+      });
+
+      
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initializeGiscusTheme);
+      } else {
+        initializeGiscusTheme();
+      }
+
+      
+      window.addEventListener('popstate', () => {
+        setTimeout(initializeGiscusTheme, 100);
+      });
+    })();
+  </script>
+
+</div>
+    </div>
+  </section>
+
+
+      </div>
+
+      <footer class="px-4 py-6">
+  
+  
+
+
+  
+  
+
+
+  
+  <div class="flex flex-col items-center justify-between gap-4 md:flex-row">
+    
+    <div class="text-muted-foreground text-center text-sm md:text-left">
+      <p class="mb-2">
+        &copy;
+        2026
+        Abhay&#39;s Blog
+      </p>
+      <p class="flex flex-wrap items-center justify-center gap-1 md:justify-start">
+        <span>Powered by</span>
+        <a
+          href="https://gohugo.io/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary hover:text-primary/80 font-medium transition-colors duration-200 hover:underline"
+        >
+          Hugo
+        </a>
+        <span>&</span>
+        <a
+          href="https://github.com/tom2almighty/hugo-narrow"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="text-primary hover:text-primary/80 font-medium transition-colors duration-200 hover:underline"
+        >
+          Narrow
+        </a>
+      </p>
+    </div>
+
+    
+    
+
+  </div>
+</footer>
+
+      
+
+
+
+
+
+<div
+  id="dock"
+  class="pointer-events-none fixed bottom-4 left-1/2 z-9999 w-fit -translate-x-1/2 translate-y-24 opacity-0 transition-all duration-300 ease-out sm:right-0 sm:left-0 sm:mx-auto sm:translate-x-0"
+  data-dock-mode="scroll"
+  role="toolbar"
+  aria-label="Quick actions toolbar"
+>
+  <nav
+    class="border-border bg-card/80 scrollbar-hide xs:px-3 xs:py-2 mx-auto flex max-w-[calc(100vw-2rem)] min-w-fit items-center justify-center overflow-x-auto rounded-2xl border px-4 py-3 shadow-lg backdrop-blur-sm sm:px-4 sm:py-3"
+  >
+    
+    
+      <button
+        id="dock-back"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
+        title="Back"
+        aria-label="Back"
+      >
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m12 19-7-7 7-7"/>
+  <path d="M19 12H5"/>
+</svg>
+
+        <span class="hidden sm:inline">Back</span>
+      </button>
+
+      
+      <div class="bg-border xs:mx-1 mx-2 h-6 w-px sm:mx-2"></div>
+    
+
+
+    <button
+      id="dock-search"
+      class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-3 xs:py-1.5 flex shrink-0 items-center gap-2 rounded-lg px-4 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-4 sm:py-2"
+      title="Search"
+      aria-label="Search"
+    >
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+</svg>
+
+      <span class="hidden md:inline">Search</span>
+    </button>
+
+    
+    <div class="bg-border xs:mx-1 mx-2 h-6 w-px sm:mx-2"></div>
+
+    
+    
+    
+      <button
+        id="dock-comments"
+        class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
+        title="Comments"
+        aria-label="Comments"
+      >
+        <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M7.9 20A9 9 0 1 0 4 16.1L2 22Z"/>
+</svg>
+
+        <span class="hidden sm:inline">Comments</span>
+      </button>
+
+      
+      <div class="bg-border xs:mx-1 mx-2 h-6 w-px sm:mx-2"></div>
+    
+
+
+    
+    <button
+      id="dock-top"
+      class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus:ring-primary/20 xs:px-2 xs:py-1.5 flex shrink-0 items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium transition-all duration-300 ease-out hover:-translate-y-0.5 hover:scale-105 focus:ring-2 focus:outline-none sm:px-3 sm:py-2"
+      title="Back to top"
+      aria-label="Back to top"
+    >
+      <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="m18 15-6-6-6 6"/>
+</svg>
+
+      <span class="hidden sm:inline">Top</span>
+    </button>
+  </nav>
+</div>
+
+
+
+
+      <aside
+    id="toc-container"
+    class="toc-side"
+    data-position="side"
+  >
+      <div id="toc-layer">
+        <div id="toc-anchor">
+          <div id="toc-side">
+            
+            <div
+              id="toc-rail"
+              class="scrollbar-hide"
+              role="button"
+              tabindex="0"
+              aria-controls="toc-panel"
+              aria-expanded="false"
+              aria-label="Table of contents"
+            ></div>
+
+            
+            <div id="toc-trigger-wrap">
+              <button
+                id="toc-trigger"
+                class="bg-card/80 border-border text-muted-foreground hover:text-primary hover:bg-primary/10 ring-offset-background focus-visible:ring-ring flex cursor-pointer items-center gap-2 rounded-full border px-4 py-1.5 text-sm shadow-sm backdrop-blur-sm transition-colors focus-visible:ring-2 focus-visible:ring-offset-2 focus-visible:outline-none"
+                aria-controls="toc-panel"
+                aria-expanded="false"
+              >
+                <svg class="h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <line x1="8" x2="21" y1="6" y2="6"/>
+  <line x1="8" x2="21" y1="12" y2="12"/>
+  <line x1="8" x2="21" y1="18" y2="18"/>
+  <line x1="3" x2="3.01" y1="6" y2="6"/>
+  <line x1="3" x2="3.01" y1="12" y2="12"/>
+  <line x1="3" x2="3.01" y1="18" y2="18"/>
+</svg>
+
+                <span id="toc-trigger-title" class="max-w-[200px] truncate">Table of contents</span>
+                <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7" />
+</svg>
+              </button>
+            </div>
+
+            
+            <div id="toc-panel" class="scrollbar-hide overflow-y-auto">
+              <div
+                class="text-foreground mb-3 flex items-center justify-between gap-2 text-sm font-bold"
+              >
+                <span class="truncate">Table of contents</span>
+                <div class="flex shrink-0 items-center gap-1">
+                  <button
+                    id="toc-pin"
+                    class="text-muted-foreground hover:text-primary hover:bg-primary/10 focus-visible:ring-ring cursor-pointer items-center rounded p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                    aria-pressed="false"
+                    aria-label="Pin table of contents"
+                    title="Pin table of contents"
+                    data-label-pin="Pin table of contents"
+                    data-label-unpin="Unpin table of contents"
+                  >
+                    <span id="toc-pin-on">
+                      <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 17v5"/>
+  <path d="M9 10.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1v-.76a2 2 0 0 0-1.11-1.79l-1.78-.9A2 2 0 0 1 15 10.76V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H8a2 2 0 0 0 0 4 1 1 0 0 1 1 1z"/>
+</svg>
+
+                    </span>
+                    <span id="toc-pin-off">
+                      <svg class="h-3 w-3" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+  <path d="M12 17v5"/>
+  <path d="M15 9.34V7a1 1 0 0 1 1-1 2 2 0 0 0 0-4H7.89"/>
+  <path d="M9 9v1.76a2 2 0 0 1-1.11 1.79l-1.78.9A2 2 0 0 0 5 15.24V16a1 1 0 0 0 1 1h11"/>
+  <path d="m2 2 20 20"/>
+</svg>
+
+                    </span>
+                  </button>
+                  <button
+                    id="toc-close"
+                    class="text-muted-foreground hover:text-foreground focus-visible:ring-ring cursor-pointer items-center rounded p-1 transition-colors focus-visible:ring-2 focus-visible:outline-none"
+                    aria-label="Close table of contents"
+                    title="Close table of contents"
+                  >
+                    <svg class="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+</svg>
+
+                  </button>
+                </div>
+              </div>
+              <div
+                id="toc-side-content"
+                class="[&_a]:text-muted-foreground [&_a:hover]:bg-primary/10 [&_a:hover]:text-primary [&_a.active]:bg-primary/10 [&_a.active]:text-primary text-sm [&_a]:block [&_a]:rounded-md [&_a]:px-2 [&_a]:py-1 [&_a]:wrap-break-word [&_a]:whitespace-normal [&_a]:transition-colors [&_a.active]:font-medium [&_li]:my-1.5 [&_nav>ul]:pl-0 [&_ul]:list-none [&_ul]:pl-4"
+              >
+                <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div></aside>
+      
+<div
+  id="search-overlay"
+  class="pointer-events-none fixed inset-0 z-40 bg-black/50 opacity-0 transition-opacity duration-300"
+></div>
+
+
+<div
+  id="search-modal"
+  class="bg-card border-border pointer-events-none fixed top-1/2 left-1/2 z-50 max-h-[80vh] w-full max-w-2xl -translate-x-1/2 -translate-y-1/2 scale-95 transform overflow-hidden rounded-xl border opacity-0 shadow-xl transition-all duration-300"
+  role="dialog"
+  aria-modal="true"
+  aria-hidden="true"
+  aria-labelledby="search-title"
+  tabindex="-1"
+>
+  
+  <div class="border-border flex items-center gap-3 border-b p-4">
+    
+    <div class="text-muted-foreground h-5 w-5 shrink-0">
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+</svg>
+
+    </div>
+    <h2 id="search-title" class="sr-only">Search</h2>
+
+    
+    <div class="relative flex-1">
+      
+      <button
+        id="search-clear"
+        class="text-muted-foreground hover:text-foreground hover:bg-muted/50 pointer-events-none absolute top-1/2 left-0 z-10 h-5 w-5 -translate-y-1/2 rounded opacity-0 transition-all duration-200"
+        title="Clear"
+        aria-label="Clear"
+      >
+        <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+</svg>
+
+      </button>
+
+      
+      <input
+        id="search-input"
+        type="text"
+        placeholder="Search posts..."
+        class="text-foreground placeholder:text-muted-foreground w-full border-none bg-transparent pl-8 text-lg outline-none"
+        autocomplete="off"
+        spellcheck="false"
+      />
+    </div>
+
+    
+    <button
+      id="search-close"
+      class="text-muted-foreground hover:text-foreground hover:bg-muted/50 flex h-6 w-6 items-center justify-center rounded-md p-0.5 transition-all duration-200"
+      title="Close"
+      aria-label="Close"
+    >
+      <svg class="h-4 w-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+</svg>
+
+    </button>
+  </div>
+
+  
+  <div id="search-results" class="max-h-96 overflow-y-auto">
+    
+    <div id="search-empty" class="flex flex-col items-center justify-center py-12 text-center">
+      <div class="bg-muted/50 mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="m21 21-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+</svg>
+
+      </div>
+      <h3 class="text-foreground mb-2 text-lg font-semibold">
+        Start searching
+      </h3>
+    </div>
+
+    
+    <div id="search-loading" class="flex items-center justify-center py-8" hidden>
+      <div
+        class="mr-3 h-6 w-6 animate-spin rounded-full border-2 border-current border-t-transparent"
+      ></div>
+      <span class="text-muted-foreground">Searching...</span>
+    </div>
+
+    
+    <div
+      id="search-no-results"
+      class="flex flex-col items-center justify-center py-12 text-center"
+      hidden
+    >
+      <div class="bg-muted/50 mb-4 flex h-16 w-16 items-center justify-center rounded-full">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+  <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h7" />
+</svg>
+
+      </div>
+      <h3 class="text-foreground mb-2 text-lg font-semibold">
+        No results
+      </h3>
+    </div>
+
+    
+    <div id="search-results-list" hidden>
+      
+      <div
+        id="search-stats"
+        class="text-muted-foreground border-border border-b px-4 py-3 text-sm"
+        data-count-other="Found %d results"
+      ></div>
+
+      
+      <div id="search-items" class="divide-border divide-y" role="list">
+        
+      </div>
+    </div>
+  </div>
+
+  
+  <div class="border-border bg-muted/20 border-t px-4 py-3"><div class="text-muted-foreground flex items-center justify-between text-xs">
+      <div class="flex items-center gap-2 md:gap-4">
+        <div class="flex items-center gap-1">
+          <kbd class="bg-muted border-border rounded border px-1.5 py-0.5 text-xs">↑↓</kbd>
+          <span class="hidden sm:inline">Navigate</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <kbd class="bg-muted border-border rounded border px-1.5 py-0.5 text-xs">↵</kbd>
+          <span class="hidden sm:inline">Select</span>
+        </div>
+        <div class="flex items-center gap-1">
+          <kbd class="bg-muted border-border rounded border px-1.5 py-0.5 text-xs">ESC</kbd>
+          <span class="hidden sm:inline">Close</span>
+        </div>
+      </div>
+      <div class="search-hint-desktop flex items-center gap-1">
+        <kbd class="bg-muted border-border rounded border px-1.5 py-0.5 text-xs">⌘K</kbd>
+        <span>Shortcut</span>
+      </div>
+    </div>
+  </div>
+</div>
+
+      
+
+
+      
+
+
+    </main>
+  </body>
+</html>

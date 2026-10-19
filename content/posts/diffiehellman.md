@@ -2,13 +2,7 @@
 title = "What is the Algorithm that Protects our Communication Every Day?"
 date = "2026-03-02"
 author = "Abhay"
-cover = ""
-tags = []
-keywords = ["encryption", "explanation"]
 description = "What is the Diffie-Hellman Key Exchange protocol? How is it relevant in today’s world?"
-showFullContent = false
-readingTime = true
-hideComments = false
 +++
 # Introduction
 Every single day, millions of people send messages that can travel almost invisibly across the world in milliseconds. Users of WhatsApp, iMessage, Signal, and many other popular apps are all told their messages are "end-to-end encrypted," but what does that truly mean? What does it mean for communication to have **End-to-End encryption (E2EE)**, and what is going on behind the scenes?

@@ -2,13 +2,7 @@
 title = "Valorant is a pain"
 date = "2023-06-20"
 author = "Abhay"
-cover = ""
-tags = []
-keywords = ["valorant", "gaming"]
 description = "My experience with valorant"
-showFullContent = false
-readingTime = true
-hideComments = false
 +++
 # Valorant is an absolute pain
 

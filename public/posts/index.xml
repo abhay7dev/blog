@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+	<channel>
+		<title>Posts on Abhay&#39;s Blog</title>
+		<link>//localhost:1313/posts/</link>
+		<description>Recent content in Posts on Abhay&#39;s Blog</description>
+		<generator>Hugo</generator>
+		<language>en-US</language>
+		
+		
+		
+		
+			<lastBuildDate>Mon, 02 Mar 2026 00:00:00 +0000</lastBuildDate>
+		
+			<atom:link href="//localhost:1313/posts/index.xml" rel="self" type="application/rss+xml" />
+			<item>
+				<title>What is the Algorithm that Protects our Communication Every Day?</title>
+				<link>//localhost:1313/posts/diffiehellman/</link>
+				<pubDate>Mon, 02 Mar 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/diffiehellman/</guid>
+				<description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;a href=&#34;#introduction&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Every single day, millions of people send messages that can travel almost invisibly across the world in milliseconds. Users of WhatsApp, iMessage, Signal, and many other popular apps are all told their messages are &amp;ldquo;end-to-end encrypted,&amp;rdquo; but what does that truly mean? What does it mean for communication to have &lt;strong&gt;End-to-End encryption (E2EE)&lt;/strong&gt;, and what is going on behind the scenes?&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How to Build a Discord Bot in Node.js</title>
+				<link>//localhost:1313/posts/discordbot/</link>
+				<pubDate>Thu, 05 Feb 2026 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/discordbot/</guid>
+				<description>&lt;h1 id=&#34;introduction&#34;&gt;Introduction&lt;a href=&#34;#introduction&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This blog post will describe, in proper detail, how to make a Discord Bot.&lt;/p&gt;&#xA;&lt;h4 id=&#34;what-is-a-discord-bot&#34;&gt;What is a Discord Bot?&lt;a href=&#34;#what-is-a-discord-bot&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h4&gt;&lt;p&gt;A Discord Bot is an automated program which can be accessed via messages on the Discord platform. They can be thought of as special accounts within the platform that are controlled via code, not humans, and their functions and features are at the discretion of the developer.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>College Applications: The Line Between Passion and Fluff</title>
+				<link>//localhost:1313/posts/college/</link>
+				<pubDate>Wed, 26 Jun 2024 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/college/</guid>
+				<description>&lt;h1 id=&#34;college-applications-the-line-between-passion-and-fluff&#34;&gt;College Applications: The Line Between Passion and Fluff&lt;a href=&#34;#college-applications-the-line-between-passion-and-fluff&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&lt;strong&gt;I wrote half this blog in July 2023, and I wrote the other half on July 2024&lt;/strong&gt;&lt;/p&gt;&#xA;&lt;p&gt;Crammed into a bleacher seat with two of my friends on both sides, I stared mindlessly towards the principal giving his speech in front of the school. Despite the pleas of the educational staff earlier, chatter could be felt echoing throughout the gym. My English teacher, who taught the large mass on the floor two years ago, stood up and began to talk about &lt;em&gt;beyond high school plans&lt;/em&gt;. When I started my journey of high school, I focused purely on doing good in high school while failing to recognize the long term importance of high school and how valuable this time is. This is my time to set my future self up for success, and when I realized that, I stared intently at the flock of students while listening to my English teacher call up his former students.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Valorant is a pain</title>
+				<link>//localhost:1313/posts/valorant/</link>
+				<pubDate>Tue, 20 Jun 2023 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/valorant/</guid>
+				<description>&lt;h1 id=&#34;valorant-is-an-absolute-pain&#34;&gt;Valorant is an absolute pain&lt;a href=&#34;#valorant-is-an-absolute-pain&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;I started playing &lt;a&#xA;    href=&#34;https://playvalorant.com&#34;target=&#34;_blank&#34;&#xA;    class=&#34;inline-flex items-center gap-1&#34;&#xA;  &gt;Valorant&lt;svg class=&#34;h-3 w-3 flex-shrink-0&#34; id=&#34;external-link&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;path fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34; d=&#34;M15 3h6v6m-11 5L21 3m-3 10v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6&#34;/&gt;&lt;/svg&gt;&#xA;  &lt;/a&gt; in December of 2022, during my Winter Break during school. I tried to get my friend to play Halo: Custom Edition but he convinced me to try out his game, Valorant. I had heard about it before but never really &lt;em&gt;knew&lt;/em&gt; it. My information was a YouTube comment saying &amp;ldquo;It was if CSGO and Overwatch had a child&amp;rdquo;. After falling down the rabbit hole and spending countless hours on the game, here are my thoughts on it.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Hello World</title>
+				<link>//localhost:1313/posts/hello-world/</link>
+				<pubDate>Sat, 08 Apr 2023 17:27:53 -0700</pubDate>
+				<guid>//localhost:1313/posts/hello-world/</guid>
+				<description>&lt;h1 id=&#34;this-is-my-first-blog-post-with-hugo-and-the-terminal-theme&#34;&gt;This is my first blog post with hugo and the terminal theme&lt;a href=&#34;#this-is-my-first-blog-post-with-hugo-and-the-terminal-theme&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;Hopefully it goes alright&#xA;If it does, i will migrate my old blog posts here&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>My `neofetch` Output!</title>
+				<link>//localhost:1313/posts/neofetch/</link>
+				<pubDate>Sun, 05 Mar 2023 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/neofetch/</guid>
+				<description>&lt;h1 id=&#34;below-is-my-neofetch-output-for-those-who-are-curious-&#34;&gt;Below is my &lt;code&gt;neofetch&lt;/code&gt; output for those who are curious :)&lt;a href=&#34;#below-is-my-neofetch-output-for-those-who-are-curious-&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;&#xA;&lt;figure&#xA;  class=&#34;image-figure not-prose my-8&#34;&#xA;  data-lightbox-enabled=&#34;&#xA;    false&#xA;  &#34;&#xA;  data-gallery-type=&#34;auto&#34;&#xA;  data-image-width=&#34;0&#34;&#xA;  data-image-height=&#34;0&#34;&#xA;  data-image-src=&#34;//localhost:1313/neofetch/output.png&#34;&#xA;&gt;&#xA;  &lt;div class=&#34;image-container&#34;&gt;&#xA;    &lt;img&#xA;    src=&#34;//localhost:1313/neofetch/output.png&#34;&#xA;    alt=&#34;Neofetch Output&#34;&#xA;    &#xA;    &#xA;    loading=&#34;lazy&#34;&#xA;    decoding=&#34;async&#34;&#xA;    data-gallery-src=&#34;//localhost:1313/neofetch/output.png&#34;&#xA;    data-gallery-alt=&#34;Neofetch Output&#34;&#xA;    data-gallery-title=&#34;&#34;&#xA;  /&gt;&lt;/div&gt;&#xA;&#xA;  &lt;/figure&gt;&#xA;&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>How to install Halo Custom Edition on Windows</title>
+				<link>//localhost:1313/posts/haloce/</link>
+				<pubDate>Tue, 20 Dec 2022 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/haloce/</guid>
+				<description>&lt;h1 id=&#34;how-to-install-halo-custom-edition-windows&#34;&gt;How to install Halo: Custom Edition (Windows)&lt;a href=&#34;#how-to-install-halo-custom-edition-windows&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;This blog post is a guide on how to install Halo: Custom Edition. The steps have been tested on Windows 10 but it should however, work for Windows 11.&lt;/p&gt;</description>
+			</item>
+			<item>
+				<title>Running Uptime Kuma on my old phone</title>
+				<link>//localhost:1313/posts/uptime-kuma-termux/</link>
+				<pubDate>Mon, 21 Nov 2022 00:00:00 +0000</pubDate>
+				<guid>//localhost:1313/posts/uptime-kuma-termux/</guid>
+				<description>&lt;h1 id=&#34;how-i-ran-uptime-kuma-on-termux-with-cloudflare-tunnels&#34;&gt;How I ran uptime-kuma on termux with cloudflare tunnels&lt;a href=&#34;#how-i-ran-uptime-kuma-on-termux-with-cloudflare-tunnels&#34; class=&#34;heading-anchor&#34; aria-label=&#34;Link to this section&#34;&gt;&lt;svg class=&#34;h-4 w-4&#34; aria-hidden=&#34;true&#34; xmlns=&#34;http://www.w3.org/2000/svg&#34; viewBox=&#34;0 0 24 24&#34;&gt;&lt;g fill=&#34;none&#34; stroke=&#34;currentColor&#34; stroke-linecap=&#34;round&#34; stroke-linejoin=&#34;round&#34; stroke-width=&#34;2&#34;&gt;&lt;path d=&#34;M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71&#34;/&gt;&lt;path d=&#34;M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71&#34;/&gt;&lt;/g&gt;&lt;/svg&gt;&lt;/a&gt;&lt;/h1&gt;&lt;p&gt;The project &lt;a&#xA;    href=&#34;github.com/louislam/uptime-kuma&#34;&gt;uptime-kuma&lt;/a&gt; is the first ever piece of software I have self hosted. Previously, I was scared  of self hosting because&amp;hellip;&lt;/p&gt;&#xA;&lt;ol&gt;&#xA;&lt;li&gt;I was not aware of what hardware requirements would be sufficient for my needs&lt;/li&gt;&#xA;&lt;li&gt;What I even wanted to self host&lt;/li&gt;&#xA;&lt;li&gt;Domain names and IP Addresses (I don&amp;rsquo;t want to expose my home IP Address)&lt;/li&gt;&#xA;&lt;/ol&gt;&#xA;&lt;p&gt;Through research, I found my answers&lt;/p&gt;</description>
+			</item>
+	</channel>
+</rss>

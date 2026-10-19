@@ -2,13 +2,7 @@
 title = "How to install Halo Custom Edition on Windows"
 date = "2022-12-20"
 author = "Abhay"
-cover = ""
-tags = []
-keywords = ["game", "halo", "windows", "haloce", "modern"]
 description = "A modern guide describing how to install Halo Custom Edition on Windows"
-showFullContent = false
-readingTime = true
-hideComments = false
 +++
 # How to install Halo: Custom Edition (Windows)
 
