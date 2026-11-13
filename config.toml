@@ -67,3 +67,19 @@ mainSections = ["posts"]
   inputPosition = "top"
   theme = "transparent_dark"
   lang = "en"
+
+[[menu.social]]
+  name = "LinkedIn"
+  url = "https://linkedin.com/in/abhaygbhat"
+  weight = 10
+
+  [menu.social.params]
+    icon = "linkedin"
+
+[[menu.social]]
+  name = "X"
+  url = "https://x.com/abhaygb7"
+  weight = 20
+
+  [menu.social.params]
+    icon = "x"
